@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+	<meta name="description" content="">
+    <title>冶金工业规划研究院</title>
+    <link href="codebase/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css"  rel="stylesheet">
+    <!--[if lt IE 9]>
+	  <script src="js/html5shiv.min.js"></script>
+	  <script src="js/respond.min.js"></script>
+	  <script src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<header class="meta-header navbar-fixed-top">
+	  	<div class="container clearfix">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><img src="imgs/logo.png"/></a>
+			</div>
+			<div class="meta-header-tool  pull-right clearfix">
+				<div class="meta-tool-email pull-right">
+					<a href="#">邮箱登录</a><a href="#">English</a>
+				</div>
+				<div class="meta-tool-form pull-right">
+					<form>
+						<input type="text" class="form-control" placeholder="搜索">
+						<span class="glyphicon glyphicon-search"></span>
+					</form>
+				</div>
+				<div class="meta-tool-tel pull-right">
+					<span class="glyphicon glyphicon-earphone"></span> 联系方式：010-6556519
+				</div>
+			</div>
+		</div>
+		<nav class="navbar meta-menu container" role="navigation">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">首 页</a></li>					
+				<li class="meta-nav-college dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">本院概况<span class="caret"></span></a>
+					<ul class="dropdown-menu clearfix">
+						<li><a href="html/basic/intro.html">本院简介</a></li>
+						<li><a href="#">院长致辞</a></li>
+						<li><a href="#">历史沿革</a></li>
+						<li><a href="#">组织机构</a></li>							
+						<li><a href="#">本院资质</a></li>							
+						<li><a href="#">领导关怀</a></li>							
+						<li><a href="#">院领导班子</a></li>							
+						<li><a href="#">荣誉证书</a></li>							
+						<li><a href="#">工作业绩</a></li>							
+						<li><a href="#">专家队伍</a></li>							
+						<li><a href="#">企业文化</a></li>						
+					</ul>
+				</li>
+				<li class="meta-nav-business dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">业务范围<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<div class="meta-menu-tab clearfix" id="metaMenutab">
+							<ul class="list-unstyled">
+								<li class="hover" showid="menuTabone">规范咨询</li>
+								<li showid="menuTabtwo">智能制造</li>
+								<li showid="menuTabthree">标准化</li>
+							</ul>
+							<div class="meta-menu-tabcont">
+								<div id="menuTabone">
+									<ul class="list-unstyled clearfix">
+										<li><a href="#">政策研究、行业课题</a></li>
+										<li><a href="#">区域规划、园区发展</a></li>
+										<li><a href="#">市场调研、产业链延伸</a></li>
+										<li><a href="#">生产诊断、经济评价</a></li>
+										<li><a href="#">节能减排、循环经济、绿色发展</a></li>
+										<li><a href="#">海外钢铁及矿山投资规划咨询</a></li>
+										<li><a href="#">企业规划、项目前期</a></li>
+										<li><a href="#">技术推广</a></li>
+										<li><a href="#">管理咨询、人力资源优化</a></li>
+										<li><a href="#">民营钢铁研究</a></li>
+									</ul>
+								</div>
+								<div id="menuTabtwo" style="display: none">
+									<ul class="list-unstyled clearfix">
+										<li><a href="#">互联网+、智能制造综合解决方案</a></li>
+									</ul>
+								</div>
+								<div id="menuTabthree" style="display: none">
+									<ul class="list-unstyled clearfix">
+										<li><a href="#">标准化研究与咨询</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</ul>
+				</li>
+				<li class="meta-nav-college dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻中心<span class="caret"></span></a>
+					<ul class="dropdown-menu clearfix">
+						<li><a href="#">院内动态</a></li>
+						<li><a href="#">行业要闻</a></li>
+						<li><a href="#">通知公告</a></li>		
+					</ul>
+				</li>	
+				<li><a href="#">高端会议</a></li>			
+				<li class="meta-nav-college dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">信息服务<span class="caret"></span></a>
+					<ul class="dropdown-menu clearfix">
+						<li><a href="#">经典案例</a></li>
+						<li><a href="#">统计资料</a></li>
+						<li><a href="#">书刊信息</a></li>
+						<li><a href="#">业务培训</a></li>					
+					</ul>
+				</li>
+				<li><a href="#">党的建设</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+		</nav>
+  	</header>
+	<div class="meta-banner-fluid">		
+		<div id="fluid-generic" class="carousel slide  carousel-fade" data-interval="6000" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#fluid-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#fluid-generic" data-slide-to="1"></li>
+				<li data-target="#fluid-generic" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="item active" id="item01">
+				  	<img alt="一体两翼大平台——一业多地多业并举" src="imgs/fluid_banner01.jpg" />
+					<!--<div class="carousel-caption">广告描述</div>-->
+				</div>
+				<div class="item" id="item02">
+				  <img alt="以五度思维统领MPI发展" src="imgs/fluid_banner02.jpg" />
+				</div>
+				<div class="item"  id="item03">
+				  <img alt="规划研究发展之路" src="imgs/fluid_banner03.jpg" />
+				</div>
+			</div>
+			<div class="container">			
+				<a class="left carousel-control" href="#fluid-generic" role="button" data-slide="prev">
+					<span class="meta-arrow-left"></span>
+				</a>
+				<a class="right carousel-control" href="#fluid-generic" role="button" data-slide="next">
+					<span class="meta-arrow-right"></span>
+				</a>
+				<div class="meta-video-player" id="playVideo"></div>
+			</div>
+		</div>
+	</div>
+   	<div class="container">
+	   <div class="row">
+			<div class="col-xs-6 meta-banner">
+				<div id="carousel-generic" class="carousel slide" data-ride="carousel" data-interval="4000">		 
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-generic" data-slide-to="2"></li>
+					</ol>
+					<a class="meta-banner-more" href="">更多</a>
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<a href="#" style="background-image: url(imgs/banner1.jpg)">
+								<div class="carousel-caption">中国钢结构协会钢材标准化技术委员会成立大会今在北京召开</div>
+							</a>							
+						</div>
+						<div class="item">
+							<a href="#" style="background-image: url(imgs/banner2.jpg)">
+								<div class="carousel-caption">冶金工业规划学院建院45周年特别庆典</div>
+							</a>
+						</div>
+						<div class="item">
+							<a href="#" style="background-image: url(imgs/banner3.jpg)">
+						  		<div class="carousel-caption">e热烈恭迎冶金工区刘院长来我院做指导工作</div>
+							</a>
+						</div>
+					</div>
+
+					<a class="left carousel-control" href="#carousel-generic" role="button" data-slide="prev">
+						&lang;
+					</a>
+					<a class="right carousel-control" href="#carousel-generic" role="button" data-slide="next">
+						&rang;
+					</a>
+				</div>
+			</div>
+			<div class="col-xs-6 meta-tab">
+				<ul id="banner-tab" class="nav nav-tabs" role="tablist">				
+					<li role="presentation" class="active">
+						<a href="#dynamic" aria-controls="dynamic" role="tab" data-toggle="tab">院内动态</a>
+					</li>
+					<li role="presentation">
+						<a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">行业要闻</a>
+					</li>
+					<li role="presentation">
+						<a href="#notice" aria-controls="notice" role="tab" data-toggle="tab">通知公告</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="dynamic">				
+						<ul class="list-unstyled">						
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">诚邀加入中国节能协会冶金工业节能专业委员会</a>
+								<span class="meta-tab-time">2017-03-06</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">冶金工业规划研究院建院45周年有奖征文活动</a>
+								<span class="meta-tab-time">2017-02-17</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">深圳世能科泰能源技术股份有限公司董事长沈忠东一行莅临规划院交流合作</a>
+								<span class="meta-tab-time">2017-05-08</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">大同市东田矿业有限公司市场总监张洪元一行莅临规划院交流合作</a>
+								<span class="meta-tab-time">2017-05-08</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>		
+								<a class="pull-left" href="#">北京鑫泉科贸有限公司、北京思能达节能电气股份有限公司董事长刘德一行莅临规划院交流合作</a>
+								<span class="meta-tab-time">2017-05-05</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">北京阜晟科技有限公司领导莅临规划院交流合作</a>
+								<span class="meta-tab-time">2017-05-05</span>
+							</li>
+						</ul>
+						<a class="meta-tab-more" href="#">更多>></a>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="messages">
+						<ul class="list-unstyled">						
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">对优特钢市场”普优转换“的几点思考</a>
+								<span class="meta-tab-time">2017-05-09</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">4月进出口增速双双下滑 大宗商品价格下行拖累进口</a>
+								<span class="meta-tab-time">2017-05-09</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">邯郸确保今年压减炼钢产能354万吨、炼铁484万吨</a>
+								<span class="meta-tab-time">2017-05-08</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">贵州省2017年钢铁行业打击取缔“地条钢”违法违规产能（第一批）</a>
+								<span class="meta-tab-time">2017-04-28</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>		
+								<a class="pull-left" href="#">中国钢铁业将彻底清除1亿多吨“地条钢”产能</a>
+								<span class="meta-tab-time">2017-04-28</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">钢价走势暴涨后出现下跌：产量上涨 市场需求滞涨</a>
+								<span class="meta-tab-time">2017-04-25</span>
+							</li>
+						</ul>
+						<a class="meta-tab-more" href="#">更多>></a>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="notice">
+						<ul class="list-unstyled">						
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">诚邀加入中国节能协会冶金工业节能专业委员会</a>
+								<span class="meta-tab-time">2017-03-06</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">冶金工业规划研究院建院45周年有奖征文活动</a>
+								<span class="meta-tab-time">2017-02-17</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">【权威发布】2017中国和全球钢铁需求预测研究成果、中国钢铁企业竞争力评级发布会今日在京召开</a>
+								<span class="meta-tab-time">2016-12-12</span>
+							</li>
+							<li class="clearfix">
+								<span class="meta-tab-arrow">&rsaquo;</span>
+								<a class="pull-left" href="#">【2017】冶金工业规划研究院人才招聘信息</a>
+								<span class="meta-tab-time">2016-10-19</span>
+							</li>
+						</ul>
+						<a class="meta-tab-more" href="#">更多>></a>
+					</div>
+				</div>
+		   	</div>
+	   </div>
+	   <div class="meta-advert">
+		   <a href="#"><img src="imgs/pic.jpg"/></a>
+	   </div>
+	   <div class="row">
+	  		<div class="col-xs-6 meta-panel-box meta-padding-right">
+				<div class="meta-panel-title">
+					<img src="imgs/panel_title01.png" />
+				</div>
+				<div class="meta-panel-cont">
+					<div id="carousel-panel" class="carousel slide">	
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-panel" data-slide-to="0" class="active">
+								<img src="imgs/special01_small.jpg"/>
+							</li>
+							<li data-target="#carousel-panel" data-slide-to="1">				<img src="imgs/special02_small.jpg"/>
+							</li>
+							<li data-target="#carousel-panel" data-slide-to="2">				<img src="imgs/special03_small.jpg"/>
+							</li>
+							<li data-target="#carousel-panel" data-slide-to="3">				<img src="imgs/special04_small.jpg"/>
+							</li>
+						</ol>
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<a href="#">
+									<img src="imgs/special01.jpg" alt="绿色工厂">
+									<div class="carousel-caption">绿色工厂—走进冶金工业规划研究院</div>
+								</a>							
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="imgs/special02.jpg" alt="智能工厂">
+									<div class="carousel-caption">智能工厂—冶金工业的智能制造</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="imgs/special03.jpg" alt="兼并重组">
+									<div class="carousel-caption">兼并重组—冶金工业兼并重组案例</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="imgs/special04.jpg" alt="产能置换">
+									<div class="carousel-caption">产能置换—冶金工业产能置换方案</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		  	</div>
+		  	<div class="col-xs-6 meta-panel-box">
+				<div class="meta-panel-title">
+					<img src="imgs/panel_title02.png" />
+				</div>
+				<div class="meta-panel-cont">
+					<ul class="meta-major list-unstyled clearfix">
+						<li class="meta-plan">
+							<a href="">
+								<div class="meta-major-tit">规划咨询</div>
+							</a>
+						</li>
+						<li class="meta-standard">	
+							<a href="">						
+								<div class="meta-major-tit">标准化</div>
+							</a>
+						</li>
+						<li class="meta-ligent">						
+							<a href="">						
+								<div class="meta-major-tit">智能制造</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+		   	</div>
+	   </div>
+	</div>
+
+	<footer class="meta-footer">
+		<div class="meta-navigation">		
+			<div class="container">
+			   <div class="row">					
+					<div class="col-xs-4">
+						<div class="row">
+							<div class="col-xs-6">
+								<dl>
+									<dt>政府机关网站</dt>
+									<dd><a href="">国家发改委</a></dd>
+									<dd><a>工信部</a></dd>
+									<dd><a>中华人民共和国环境保护部</a></dd>
+									<dd><a>国务院国资委</a></dd>
+									<dd><a>中国钢铁工业协会</a></dd>
+								</dl>
+							</div>
+							<div class="col-xs-6">
+								<dl>
+									<dt>企事业单位网站</dt>
+									<dd><a>中国金属学会冶金技术经济分会</a></dd>
+									<dd><a>工信部</a></dd>
+									<dd><a>中华人民共和国环境保护部</a></dd>
+									<dd><a>国务院国资委</a></dd>
+									<dd><a>中国钢铁工业协会</a></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="row">
+							<div class="col-xs-6">
+								<dl>
+									<dt>相关研究机构网站</dt>
+									<dd><a>中国金属学会冶金技术经济分会</a></dd>
+									<dd><a>工信部</a></dd>
+									<dd><a>中华人民共和国环境保护部</a></dd>
+									<dd><a>国务院国资委</a></dd>
+									<dd><a>中国钢铁工业协会</a></dd>
+								</dl>
+							</div>
+							<div class="col-xs-6">
+								<dl>
+									<dt>国外专业网站</dt>
+									<dd><a>工业生产力研究所</a></dd>
+									<dd><a>工信部</a></dd>
+									<dd><a>中华人民共和国环境保护部</a></dd>
+									<dd><a>国务院国资委</a></dd>
+									<dd><a>中国钢铁工业协会</a></dd>
+								</dl>
+							</div>
+						</div>				
+					</div>
+					<div class="col-xs-4">
+						<div class="meta-footer-qrcode">
+							<img src="imgs/qrcode.jpg" alt="扫描二维码，关注我！" />
+							<span>服务热线：<strong>010-65256519</strong></span>
+						</div>
+					</div>
+			   </div>
+			</div>
+		</div>
+		<div class="meta-copyright">
+			<p class="meta-access">本站首页已被访问：044916次</p>
+			<p class="meta-site-info">版权所有 Copyright© 2012-2015 冶金工业规划研究院   京ICP备12022799号</p>
+			<p class="meta-site-info">地址：北京市东城区东四西大街46号    邮政编码：100711    联系电话：010-65256519     传真：010-65131945</p>
+		</div>
+	</footer>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog meta-banner-video" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">冶金工业规划研究院宣传视频</h4>
+				</div>
+				<div class="modal-body">
+					<iframe frameborder="0" width="800" height="500" allowfullscreen></iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--  浮动窗口begin  -->
+	 <div class="meta-contact" id="sideContact">
+		 <div class="meta-message meta-msg">
+			 <h4>业务咨询</h4>
+			 <div>
+				<span>总业务咨询</span>
+			 	<span class="meta-msgbtn">和我联系</span>
+			 </div>
+			 <div>
+				<span>Contact us</span>
+				<span class="meta-msgbtn">和我联系</span>
+			 </div>
+		 </div>
+		 <div class="meta-message">
+			 <h4>在线报名</h4>
+			 <span class="meta-signup">立即报名</span>
+		 </div>
+	 </div>
+	<!--  浮动窗口end  -->
+	<script src="js/jquery.min.js"></script>
+	<script src="codebase/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/config.js"></script>
+	<script type="text/javascript">
+		$(function(){			
+			
+			//视频播放			
+			$('#playVideo').click(function(){				
+				var src = 'https://v.qq.com/iframe/player.html?vid=b05000m3zcc&tiny=0&auto=0';
+				$('#myModal').modal('show');
+				$('#myModal iframe').attr('src', src);
+			});
+			$('#myModal button').click(function () {
+				$('#myModal iframe').removeAttr('src');
+			});
+			
+			//播放按钮控制
+			$('#fluid-generic').on('slide.bs.carousel', function (event) {
+				var $hoder = $('#fluid-generic').find('.item'),
+					$items = $(event.relatedTarget);				
+				var getIndex= $hoder.index($items);
+				if(getIndex =='0'){
+					$('#playVideo').removeClass('hide');
+				}else{
+					$('#playVideo').addClass('hide');
+				}				
+			})
+		});
+
+	</script>
+  </body>
+</html>

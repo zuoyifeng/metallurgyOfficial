@@ -1,0 +1,112 @@
+/*项目公共可调控风格style*/
+
+/*整体架构*/
+body {
+    font-family: "Microsoft YaHei";
+    background-color: #f9f9f9;
+}
+.container {
+    width: 1170px !important;
+    padding:0;
+}
+/*页面头部begin*/
+
+/*页面头部end*/
+
+/*页面底部begin*/
+.m-footer {
+    padding-left:10px;
+    position:fixed;
+    left:0;
+    bottom:0;
+    height:30px;
+    line-height:30px;
+    background-color:#eef4f6;
+    width:100%;
+    border-top:1px solid #dbe3e6;
+}
+/*页面底部备end*/
+
+/*细节组件style*/
+
+/*表单输入框和选择框begin*/
+.form_input {
+    color:#555;
+    background-color:#fff;
+    background-image:none;
+    border:1px solid #ccc;
+    border-radius:2px;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s
+}
+.form_input:focus {
+    border-color:#66afe9;
+    outline:0;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+/*表单输入框和选择框end*/
+
+/*按钮组件代码begin*/
+.m-button {
+    margin-top: 10px;
+    font-family: "微软雅黑";
+    color: #333;
+    font-weight: 300;
+    background-color: #DCDBDB;
+    font-size: 16px;
+    line-height: 35px;
+    height: 35px;
+    padding: 0 10px;
+    min-width: 70px;
+    text-align: center;
+    display: inline-block;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    border: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #dddddd;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.m-button:hover {
+    background-color: #BCBCBC;
+}
+.m-button:active {
+    box-shadow: inset 0px 2px 3px 2px #AAA;
+}
+.m-button-query {
+    background: #DCDBDB;
+}
+.m-button-submit {
+    background: #3473D1;
+    color:#fff;
+}
+.m-button-submit:active{
+    background:#2E6BC9;
+    box-shadow:inset 0px 2px 3px 2px #2B64B9;
+}
+/*按钮组件代码end*/
+
+/*面包屑组件begin*/
+.m-crumb {
+    margin: 0;
+    font-size: 12px;
+    background-color: #eef4f6;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    font-weight: normal;
+    border-bottom: 1px solid #dbe3e6;
+}
+/*面包屑组件end*/
