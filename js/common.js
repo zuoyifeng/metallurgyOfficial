@@ -2,14 +2,14 @@
 $(function(){
 	"use strict";
 	/*	导航条点击改成鼠标事件	*/
-//	var $dropdownLi = $('.meta-menu>ul>li.dropdown');
-//	$dropdownLi.mouseover(function() {
-//		$(this).addClass('open');
-//	}).mouseout(function() {
-//		$(this).removeClass('open');
-//	});
+	var $dropdownLi = $('.meta-menu>ul>li.dropdown');
+	$dropdownLi.mouseover(function() {
+		$(this).addClass('open');
+	}).mouseout(function() {
+		$(this).removeClass('open');
+	});
 //	//控制点击盒子关闭菜单		
-//	$(document).off('click.bs.dropdown.data-api');
+	$(document).off('click.bs.dropdown.data-api');
 	
 
 	/*	菜单中的选项卡	*/
