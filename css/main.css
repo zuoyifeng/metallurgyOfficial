@@ -780,7 +780,7 @@ body {
 .meta-wrap{
 	position: relative;
 	z-index: 50;
-	top: -195px;
+	margin-top: -195px;
 }
 .meta-main-head{
     position:relative;
@@ -810,7 +810,7 @@ body {
     background:#fff;    
     position: relative;
     z-index: 100;
-    top: -50px;
+    margin-top: -50px;
 }
 .meta-main>.row{
     margin:0px auto;
