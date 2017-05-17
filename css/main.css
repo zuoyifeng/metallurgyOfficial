@@ -832,7 +832,6 @@ body {
 }
 .meta-content{
     padding:25px 0;
-    font-size:14px;
 }
 /*富文本编辑器内容放置区域*/
 .meta-detail{
@@ -861,22 +860,44 @@ body {
     margin-top:17px;
     margin-bottom:13px;
 }
-.meta-submenu ul li {
+.meta-submenu>ul>li {
     border-bottom:1px solid #DEDEDE;
     font-size:16px;
 }
 .meta-submenu>ul>li>a{
     line-height:50px;
-    display:block;
-}
-.meta-submenu ul li a{
     color:#333;
     text-align:center;
+}
+.meta-submenu ul li a{
+    padding:0 10px;
     text-decoration:none;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    display:block;
+    cursor:pointer;
 }
 .meta-submenu ul li a:hover,
 .meta-submenu ul li a.active{
     color:#3a72c3;
+}
+/*左侧二级菜单*/
+.meta-submenu > ul > li.open >ul,
+.meta-submenu > ul > li.active >ul{
+    display:block;
+}
+.meta-submenu > ul > li.active > a {
+    color:#3a72c3;
+}
+.meta-submenu ul li ul{
+    font-size:15px;
+    padding:0 0 8px 40px;
+    display:none;
+}
+.meta-submenu ul li ul li a{
+    line-height:35px;
+    color:#666;
 }
 /*右侧内容*/
 .meta-main .meta-maincont>h3,
@@ -1119,7 +1140,7 @@ body {
     font-size:24px;
     font-weight:600;
     text-align:center;
-    padding:10px 0 20px;
+    padding:0 0 20px;
 }
 .meta-content .meta-content-info{
     font-size:14px;
@@ -1127,6 +1148,103 @@ body {
     color:#666;
     line-height:30px;
     margin-bottom:30px;
+}
+/*党建工作*/
+.meta-committee h3{
+    background-image:url(../imgs/communist_title.png);
+    background-position:left top;
+    background-repeat:no-repeat;
+    color:#fff;
+    padding-bottom:18px;
+    line-height:42px;
+    text-indent:50px;
+    border-bottom:10px solid #C00000;
+}
+.meta-committee .meta-content{
+    background-image:url(../imgs/communist_bg.png);
+    background-position:right bottom;
+    background-repeat:no-repeat;
+}
+/*历届会议详情*/
+.meta-meeting h3{
+    position:relative;
+    padding-right:180px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    height:50px;
+    line-height:50px;
+}
+.meta-meeting .meta-meet-topbtn{
+    position:absolute;
+    right:30px;
+    top:5px;
+    color:#eb7d11;
+    border:1px solid #e5e5e5;    
+	-webkit-border-radius:30px;
+	-moz-border-radius: 30px;
+	border-radius:30px;
+    width:145px;
+    height:38px;
+    line-height:36px;
+    text-align:center;
+    cursor:pointer;
+    text-decoration:none;
+    
+	-webkit-transition:all .2s ease;
+	-moz-transition:all .2s ease;
+	-o-transition:all .2s ease;
+	transition: all .2s ease;
+}
+.meta-meeting .meta-meet-topbtn:hover{
+    background-color:#eb7d11;
+    border-color:#eb7d11;
+    color:#fff;
+}
+.meta-meeting .meta-meet-subtitle {
+    font-size:18px;
+    color:#eb7d11;
+    padding:0 0 20px 6px;
+    font-weight:600;
+}
+.meta-meeting .meta-meet-signup {
+    margin:30px auto 0;
+    width:300px;
+    line-height:56px;
+    font-size:20px;
+    color:#fff;
+    text-align:center;
+    background-color:#3A73C4;    
+	-webkit-border-radius:56px;
+	-moz-border-radius:56px;
+	border-radius:56px;
+    cursor:pointer;
+	-webkit-transition:all .3s ease;
+	-moz-transition:all .3s ease;
+	-o-transition:all .3s ease;
+	transition: all .3s ease;
+}
+.meta-meeting .meta-meet-signup:hover{
+    background-color:#3366AA;    
+}
+.meta-meet-end .meta-content {
+    position:relative;
+}
+.meta-meet-end .meta-meet-notice .meta-detail{
+    height:300px;
+    overflow:hidden;
+}
+.meta-meet-end .meta-meet-content .meta-detail{
+    height:450px;
+    overflow:hidden;
+}
+.meta-meet-end .meta-content .meta-meet-more{
+    left:0;
+    right:auto;
+    line-height:25px;
+}
+.meta-meet-end .meta-content.open .meta-detail {
+    height:auto;
 }
 /*分页*/
 .meta-pagination {
@@ -1155,7 +1273,7 @@ body {
 /*翻页*/
 .meta-pagination .pager li > a, 
 .meta-pagination .pager li > span{
-   max-width:380px;
+    max-width:380px;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space: nowrap;

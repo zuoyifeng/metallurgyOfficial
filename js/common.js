@@ -19,6 +19,43 @@ $(function(){
 
 		$('#metaMenutab div#'+showid).show().siblings('div').hide();
 	});
+
+    /*院领导班子列表点击展开*/
+	$('.meta-leader-more').on('click', function () {
+	    var $this = $(this),
+            $dl = $(this).parents('dl');
+	    if ($dl.hasClass('open')) {
+	        $dl.removeClass('open');
+	        $(this).text('【详情】');
+	    } else {
+	        $dl.addClass('open');
+	        $(this).text('【收起】');
+	    }
+	})
+    /*子页面左侧菜单点击展开*/
+	$('.meta-submenu>ul>li>a').on('click', function () {
+	    var $parent = $(this).parent('li'),
+            $hasopen = $parent.hasClass('open');
+	    console.log($hasopen);
+	    if ($hasopen) {
+	        $parent.removeClass('open');
+	    } else {
+	        $parent.addClass('open').siblings('li').removeClass('open');
+	    }
+	})
+
+    /*高端会议已完成会议点击展开*/
+	$('.meta-meet-more').on('click', function () {
+	    var $this   = $(this),
+            $parent = $(this).parent('.meta-content');
+	    if ($parent.hasClass('open')) {
+	        $parent.removeClass('open');
+	        $(this).text('【详情】');
+	    } else {
+	        $parent.addClass('open');
+	        $(this).text('【收起】');
+	    }
+	})
 });
 //封装ajax请求
 function _ajax(opt) {
