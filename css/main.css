@@ -830,6 +830,22 @@ body {
     margin-top:-60px;
     padding: 0px 25px;
 }
+.meta-content{
+    padding:25px 0;
+    font-size:14px;
+}
+/*富文本编辑器内容放置区域*/
+.meta-detail{
+    font-size:14px;
+}
+.meta-detail p{
+    line-height:1.8;
+    font-size:15px;
+    text-align: justify;
+}
+.meta-detail img {
+    max-width:100%;
+}
 /*左侧导航*/
 .meta-submenu .meta-submenu-top{
     background:#3A72C3;
@@ -869,20 +885,7 @@ body {
     border-bottom:2px solid #DCDCDC;
     padding:0 0 10px 6px;
 }
-.meta-maincont .meta-detail{
-    padding:25px 0;
-    text-align: justify;
-    font-size:14px;
-}
-.meta-maincont .meta-detail p,
-.meta-content-detail p{
-    line-height:1.8;
-    font-size:15px;
-}
-.meta-maincont .meta-detail img {
-    max-width:100%;
-}
-.meta-detail .meta-detail-listmore {
+.meta-content .meta-detail-listmore {
     position: absolute;
     bottom: 0;
     right: 0;    
@@ -899,6 +902,9 @@ body {
     padding:55px 0 55px 0;
     border-bottom:1px solid #E5E5E5;
     margin-bottom:0;
+}
+.meta-leader dl:last-child{
+    border-bottom:none;
 }
 .meta-leader dl dt{
     float:left;
@@ -1073,16 +1079,17 @@ body {
 .meta-expert-info .meta-expert-more {   
     width:100%;
     text-indent: -6px;
-    cursor:default;
+    cursor:default; 
+    color:#eb7d11;
 }
 .meta-expert-info .meta-expert-more a{   
     color:#eb7d11;
 }
 /*新闻/列表模板*/
-.meta-list-ul ul li {
+.meta-list ul li {
     border-bottom:1px dashed #DDD;
 }
-.meta-list-ul ul li a{
+.meta-list ul li a{
 	color: #222;
 	display: inline-block;
 	overflow:hidden;
@@ -1092,10 +1099,10 @@ body {
 	max-width: 82%;
     float:left;
 }
-.meta-list-ul ul li a:hover{
+.meta-list ul li a:hover{
 	color: #3a72c3;
 }
-.meta-list-ul .meta-list-arrow{
+.meta-list .meta-list-arrow{
 	float: left;
 	color: #3a72c3;
 	font-size: 24px;
@@ -1103,7 +1110,7 @@ body {
     margin-left: 5px;
 	line-height: 46px;
 }
-.meta-list-ul .meta-list-time{
+.meta-list .meta-list-time{
 	float: right;
 	line-height: 48px;
 }
@@ -1112,7 +1119,7 @@ body {
     font-size:24px;
     font-weight:600;
     text-align:center;
-    padding:30px 0 20px;
+    padding:10px 0 20px;
 }
 .meta-content .meta-content-info{
     font-size:14px;
@@ -1124,6 +1131,7 @@ body {
 /*分页*/
 .meta-pagination {
     text-align:center;
+    padding-top: 20px;
 }
 .meta-pagination .pagination > li{
     margin:0px 8px;
