@@ -729,27 +729,6 @@ body {
 .meta-contact .meta-message .meta-signup:hover{
 	color: #000;
 }
-/*响应式*/
-@media screen and (min-width: 768px) {
-	.carousel-indicators {
-		bottom: 10px;
-	}
-}
-@media screen and (max-width: 1400px){	
-	.meta-banner-fluid .meta-video-player{
-		width: 70px;
-		height: 70px;
-		margin-top: -50px;
-		margin-left: -35px;
-	}
-	.meta-banner-video.modal-dialog{
-		width:652px;
-	}
-	.meta-banner-video iframe {
-		width:620px;
-		height: 400px;
-	}
-}
 
 /*子页面公共样式开始*/
 
@@ -775,6 +754,15 @@ body {
 	background-position:center;
 	background-size: auto 100%;
 	background-color: #003C54;
+	position: relative;
+	z-index: 20;
+}
+.meta-contact-banner{
+	height: 450px;
+	background:url(../imgs/head_contact_bg.jpg) no-repeat;
+	background-position:center;
+	background-size: auto 100%;
+	background-color: #F1F1F1;
 	position: relative;
 	z-index: 20;
 }
@@ -1166,7 +1154,7 @@ body {
     background-repeat:no-repeat;
 }
 /*历届会议详情*/
-.meta-meeting h3{
+.meta-meeting>h3{
     position:relative;
     padding-right:180px;
     overflow:hidden;
@@ -1230,21 +1218,47 @@ body {
 .meta-meet-end .meta-content {
     position:relative;
 }
-.meta-meet-end .meta-meet-notice .meta-detail{
-    height:300px;
-    overflow:hidden;
-}
-.meta-meet-end .meta-meet-content .meta-detail{
-    height:450px;
-    overflow:hidden;
-}
 .meta-meet-end .meta-content .meta-meet-more{
-    left:0;
-    right:auto;
+    bottom:0;
+    height:25px;
     line-height:25px;
 }
-.meta-meet-end .meta-content.open .meta-detail {
-    height:auto;
+/*联系我们*/
+.meta-contactus {
+    margin-top:20px;
+}
+.meta-contactus .meta-artonce{
+    margin-top:20px;
+    padding:0;
+}
+.meta-contactus .meta-artonce h3 {
+    text-align:center;
+    font-size:32px;
+    padding:20px 0;
+}
+.meta-contactus .meta-content-help {
+    font-size:24px;
+    margin-bottom:30px;
+}
+.meta-contactus .meta-contact-map {
+    height:500px;
+}
+/*百度地图*/
+.iw_poi_title {
+    color: #CC5522;
+    font-size: 14px;
+    font-weight: bold;
+    overflow: hidden;
+    padding-right: 13px;
+    white-space: nowrap;
+}
+
+.iw_poi_content {
+    font: 12px arial,sans-serif;
+    overflow: visible;
+    padding-top: 4px;
+    white-space: -moz-pre-wrap;
+    word-wrap: break-word;
 }
 /*分页*/
 .meta-pagination {
@@ -1291,3 +1305,29 @@ body {
     top:5px;
 }
 /*子页面公共样式结束*/
+
+/*响应式*/
+@media screen and (min-width: 768px) {
+	.carousel-indicators {
+		bottom: 10px;
+	}
+}
+@media screen and (max-width: 1400px){	
+	.meta-banner-fluid .meta-video-player{
+		width: 70px;
+		height: 70px;
+		margin-top: -50px;
+		margin-left: -35px;
+	}
+	.meta-banner-video.modal-dialog{
+		width:652px;
+	}
+	.meta-banner-video iframe {
+		width:620px;
+		height: 400px;
+	}
+    .meta-contact-banner{
+	    height: 300px;
+	    background-size:auto;
+    }
+}

@@ -8,7 +8,7 @@ $(function(){
 	}).mouseout(function() {
 		$(this).removeClass('open');
 	});
-//	//控制点击盒子关闭菜单		
+    //控制点击盒子关闭菜单		
 	$(document).off('click.bs.dropdown.data-api');
 	
 
@@ -36,7 +36,7 @@ $(function(){
 	$('.meta-submenu>ul>li>a').on('click', function () {
 	    var $parent = $(this).parent('li'),
             $hasopen = $parent.hasClass('open');
-	    console.log($hasopen);
+	    //console.log($hasopen);
 	    if ($hasopen) {
 	        $parent.removeClass('open');
 	    } else {
@@ -44,19 +44,32 @@ $(function(){
 	    }
 	})
 
-    /*高端会议已完成会议点击展开*/
-	$('.meta-meet-more').on('click', function () {
-	    var $this   = $(this),
-            $parent = $(this).parent('.meta-content');
-	    if ($parent.hasClass('open')) {
-	        $parent.removeClass('open');
-	        $(this).text('【详情】');
-	    } else {
-	        $parent.addClass('open');
-	        $(this).text('【收起】');
-	    }
-	})
 });
+//截取字符为多行显示更多(可扩展为按钮添加class)
+function textOverflow(ev, len, moreBtn) {
+    var evBox  = document.querySelector(ev),
+        evHtml = evBox.innerHTML,
+        newBox = document.createElement("div");
+
+    moreBtn = document.querySelector(moreBtn) || document.createElement("span");
+    //判断内容是否多于需要超出省略的界限
+    moreBtn.innerHTML = evHtml.length > len ? "显示全部" : "";
+    newBox.innerHTML  = evHtml.substring(0, len) + '......';
+    moreBtn.onclick = function () {
+        if (moreBtn.innerHTML == "显示全部") {
+            moreBtn.innerHTML = "收起";
+            newBox.innerHTML  = evHtml;
+        } else {
+            moreBtn.innerHTML = "显示全部";
+            newBox.innerHTML = evHtml.substring(0, len) + '......';
+        }
+    }
+    //在原节点上添加新增节点和更多按钮
+    evBox.innerHTML = "";
+    evBox.appendChild(newBox);
+    evBox.appendChild(moreBtn);
+}
+
 //封装ajax请求
 function _ajax(opt) {
     $.ajax({
