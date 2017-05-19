@@ -33,7 +33,10 @@ body {
 	color: #ff8500;
 }
 .meta-header .meta-menu .nav > li > a:hover,
-.meta-header .meta-menu .nav > li > a:focus {
+.meta-header .meta-menu .nav > li > a:focus,
+.meta-header .meta-menu .navbar-nav > .active > a,
+.meta-header .meta-menu .navbar-nav > .active > a:focus,
+.meta-header .meta-menu .navbar-nav > .active > a:hover{
 	background-color: transparent;
 	color: #ff8500;
 }
