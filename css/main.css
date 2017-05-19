@@ -102,6 +102,12 @@ body {
 	text-align: center;
 	margin-bottom: 10px;
 }
+.meta-menu-tab > ul > li>a{
+	color: #333;
+}
+.meta-menu-tab > ul > li.hover>a{
+    color:#fff;
+}
 .meta-menu-tab .meta-menu-tabcont{
 	width: 500px;
 	float: left;
@@ -1288,6 +1294,7 @@ body {
 .meta-pagination .pager li > a, 
 .meta-pagination .pager li > span{
     max-width:380px;
+    min-width:148px;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
@@ -1299,7 +1306,7 @@ body {
 .meta-pagination .pager li.next a{
     padding-right:35px;
 }
-.meta-pagination .pager li.next span{
+.meta-pagination .pager li.next span[aria-hidden=true]{
     position:absolute;
     right:10px;
     top:5px;
