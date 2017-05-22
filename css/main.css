@@ -1050,6 +1050,19 @@ body {
 .meta-maincont .meta-expert {
     padding:10px 0;
 }
+.meta-expert-class {
+    font-size:20px;
+    color:#3972C2;
+    font-weight:600;
+    padding:30px 0;
+}
+.meta-expert-list {
+    overflow:hidden;
+    border-bottom:1px solid #e5e5e5;
+}
+.meta-expert-list:last-child{
+    border-bottom:none;
+}
 .meta-expert-list dl{
     float:left;
     width:48%;
@@ -1106,6 +1119,7 @@ body {
 /*新闻/列表模板*/
 .meta-list ul li {
     border-bottom:1px dashed #DDD;
+    overflow:hidden;
 }
 .meta-list ul li a{
 	color: #222;
@@ -1231,6 +1245,237 @@ body {
     bottom:0;
     height:25px;
     line-height:25px;
+}
+/*信息服务*/
+.meta-filter-year {
+    padding:30px 0;
+}
+.meta-filter {
+    position:relative;
+}
+.meta-filter .meta-filter-item {
+    width:86%;
+    margin:0px auto;
+	-moz-user-select: none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+    overflow:hidden;
+}
+.meta-filter:after{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:60px;
+    right:60px;
+    z-index:2;
+    border-bottom:2px dotted #E5E5E5;
+}
+.meta-filter .meta-filter-item li{
+    float:left;
+    width:20%;
+    text-align:center;
+    font-size:22px;
+}
+.meta-filter .meta-filter-item li a{
+    background-color:#fff;
+    position:relative;
+    z-index:12;
+    color:#666;
+    text-decoration:none;
+    width:76px;
+    margin:0px auto;
+    height:76px;
+    line-height:76px;
+    display:block;
+    cursor:pointer;
+}
+.meta-filter .meta-filter-item li.active a{
+    color:#fff;
+    background-image:url(../imgs/filter-current.jpg);
+    background-repeat:no-repeat;
+    background-position:left 2px;
+}
+.meta-filter .meta-filter-prev,
+.meta-filter .meta-filter-next{
+    width:40px;
+    height:40px;
+    position:absolute;
+    top:18px;
+    left:10px;
+    z-index:13;
+    background-image:url(../imgs/filter-arrow.png);
+    background-repeat:no-repeat;
+    background-position:left center;
+}
+.meta-filter .meta-filter-next {
+    left:auto;
+    right:10px;
+    background-position:-36px center;
+}
+/*书刊*/
+.meta-book dl{
+    padding:4px;
+    border:1px solid #efefef;
+    position:relative;
+}
+.meta-book dl dt{
+    position:absolute;
+    left:30px;
+    top:30px;
+    z-index:4;
+    width:160px;
+    height:160px;
+    overflow:hidden;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+}
+.meta-book dl dt img{
+    width:100%;
+    display:block;
+}
+.meta-book dl dd{
+    background:#F2F2F2;
+    overflow:hidden;
+    text-align:justify;
+    padding-left:210px;
+    padding-right:20px;
+}
+.meta-book dl dd.meta-book-name{
+    color:#3A73C4;
+    font-size:18px;
+    padding-top:40px;
+    padding-bottom:10px;
+}
+.meta-book dl dd.meta-book-describe{
+    color:#555;
+    line-height:25px;
+    height:100px;
+}
+.meta-book dl dd.meta-book-more{
+    padding-bottom:38px;
+    position:relative;
+}
+.meta-book dl dd.meta-book-more span{
+    right:20px;
+    top:0;
+    cursor:auto;
+    background-color:transparent;
+}
+.meta-book dl dd.meta-book-more a{
+    color:#eb7d11;
+}
+/*多媒体*/
+.meta-media {
+   
+}
+.meta-media dl{
+    float: left;
+    width:47%;
+    margin-bottom: 0;
+    margin-left:3%;
+    overflow:hidden;
+    border-bottom:1px solid #e9e9e9;
+    padding:25px 0;
+}
+:root .meta-media dl{
+    margin-left:2%;
+}
+:root .meta-media dl:nth-child(2n){
+    margin-left:4%;
+}
+.meta-media dl dt{
+    float:left;
+    width:45%;
+    max-width:200px;
+    overflow:hidden;
+    position:relative;
+}
+.meta-media dl dt:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index:2;
+    background: url(../../imgs/header_bg.png);
+    opacity: 0;
+    filter:alpha(opacity=0);
+    -ms-filter:alpha(opacity=0);
+
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+.meta-media dl dt:hover:after {
+    filter:alpha(opacity=100); 
+    -ms-filter:alpha(opacity=100);
+    opacity: 1;
+}
+.meta-media dl dt img{
+    display:block;
+    width:100%;
+
+    -moz-transition: all 0.3s cubic-bezier(0, 0.5, 0.5, 1) 0s;
+    -o-transition: all 0.3s cubic-bezier(0, 0.5, 0.5, 1) 0s;
+    -webkit-transition: all 0.3s cubic-bezier(0, 0.5, 0.5, 1) 0s;
+    transition: all 0.3s cubic-bezier(0, 0.5, 0.5, 1) 0s;
+}
+.meta-media dl dt:hover img{
+    -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -ms-transform:scale(1.1);
+    -o-transform:scale(1.1);
+    transform:scale(1.1);
+}
+.meta-media dl dt .meta-media-play {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-15px;
+    margin-top:-15px;
+    width:30px;
+    height:30px;
+    z-index:3;
+    background-image:url(../imgs/small_play.png);
+    background-repeat:no-repeat;
+    background-position:center;
+    cursor:pointer;
+}
+.meta-media dl dd{
+    float:right;
+    width:50%;
+    margin-right:2%;
+    text-align:justify;
+}
+.meta-media dl dd.meta-media-title{
+    line-height:38px;
+    text-indent:-5px;
+    margin-bottom:5px;
+    font-size:15px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.meta-media dl dd.meta-media-title a{
+    color:#222;
+    text-decoration:none;
+}
+.meta-media dl dd.meta-media-title a:hover{
+    color:#eb7d11;
+}
+.meta-media dl dd.meta-media-title b{
+    font-weight:normal;
+    color:#eb7d11;
+}
+.meta-media dl dd.meta-media-info{
+    color:#777;
+    height:75px;
+    line-height:25px;
+    overflow:hidden;
 }
 /*联系我们*/
 .meta-contactus {
