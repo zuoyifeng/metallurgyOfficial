@@ -166,41 +166,77 @@
                     <div class="meta-list-box">
                         <div class="meta-filter-year">
                             <div class="meta-filter">
-                                <a class="meta-filter-prev" href="###"></a>
-                                <ul class="meta-filter-item list-unstyled">
-                                    <li class="active"><a>2017</a></li>
-                                    <li><a>2016</a></li>
-                                    <li><a>2015</a></li>
-                                    <li><a>2014</a></li>
-                                    <li><a>2013</a></li>
-                                </ul>
-                                <a class="meta-filter-next" href="###"></a>
+                                <span flag="prev" class="meta-filter-prev"></span>
+                                <div class="meta-filter-item">
+                                    <ul class="list-unstyled" id="fliterYear"></ul>
+                                </div>
+                                <span flag="next" class="meta-filter-next"></span>
                             </div>
                         </div>
-                        <div class="meta-bluebook-class">专项报告</div>
-                        <div class="meta-bluebook clearfix">
-                            <dl>
-                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
-                                <dd><a href="bluebook_detail.html">2016年钢铁市场主要板材产品市场报告</a></dd>
-                            </dl>
-                            <dl>
-                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
-                                <dd><a href="bluebook_detail.html">2016年铁矿、锰矿、铬矿资源分析报告</a></dd>
-                            </dl>
+                        <div class="meta-blue" id="specialData">
+                            <div class="meta-bluebook-class">专项报告</div>
+                            <div class="meta-bluebook clearfix"></div>
                         </div>
-                        <div class="meta-bluebook-class">季度报告</div>
-                        <div class="meta-bluebook clearfix">
-                            <dl>
+                        <div class="meta-blue" id="seasonData">
+                            <div class="meta-bluebook-class">季度报告</div>
+                            <div class="meta-bluebook clearfix"></div>
+                        </div>
+                        <div class="meta-blue" id="annualData">
+                            <div class="meta-bluebook-class">年度报告</div>
+                            <div class="meta-bluebook clearfix"></div>
+                        </div>
+
+                        <!-- 模拟数据 1.专项报告 2.季度报告 3.年度报告-->
+                        <div id="timeline-data" style="display:none;">
+                            <dl _year="2017" _category="1">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2017年钢铁市场主要板材产品市场报告</a></dd>
+                            </dl>
+                            <dl _year="2017" _category="1">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2017年铁矿、锰矿、铬矿资源分析报告</a></dd>
+                            </dl>
+                            <dl _year="2017" _category="2">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2017年第一季度报告</a></dd>
+                            </dl>
+                            <dl _year="2016" _category="2">
                                 <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
                                 <dd><a href="bluebook_detail.html">2016年第一季度报告</a></dd>
                             </dl>
-                            <dl>
+                            <dl _year="2016" _category="2">
                                 <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
                                 <dd><a href="bluebook_detail.html">2016年第二季度报告</a></dd>
                             </dl>
-                            <dl>
+                            <dl _year="2016" _category="2">
                                 <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
                                 <dd><a href="bluebook_detail.html">2016年第三季度报告</a></dd>
+                            </dl>
+                            <dl _year="2016" _category="3">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2016年度报告</a></dd>
+                            </dl>
+
+                            <dl _year="2015" _category="1">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2015年铁矿、锰矿、铬矿资源分析报告</a></dd>
+                            </dl>
+                            <dl _year="2015" _category="2">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2015年第二季度报告</a></dd>
+                            </dl>
+                            <dl _year="2015" _category="2">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2015年第三季度报告</a></dd>
+                            </dl>
+                            <dl _year="2015" _category="3">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2015年度报告</a></dd>
+                            </dl>
+
+                            <dl _year="2014" _category="3">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2014年度报告</a></dd>
                             </dl>
                         </div>
                     </div>
@@ -299,5 +335,137 @@
 	<script src="../../codebase/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../../js/common.js"></script>
 	<script src="../../js/config.js"></script>
+    <script src="../../js/lodash.min.js"></script>
+    <script type="text/javascript">
+        var years = [],
+            $node = $('#timeline-data>dl'),
+            len = $node.length;
+        var category = [1,2,3];
+        for (var i = 0; i < len; i++) {
+            years.push($node[i].attributes['_year'].value);
+            //category.push($node[i].attributes['_category'].value);
+        }
+        //去重
+        years = _.uniq(years, true);
+        //category = _.uniq(category, true);
+        //生成时间轴宽度
+        var yearlen = years.length,
+            yearWidth = $('#fliterYear').width(),
+            listWidth = yearWidth / 5;
+
+        //加载时间轴年份和对应数据列表
+        var yearHtml = '';
+        for (var n = 0; n < yearlen; n++) {
+            var $ul = document.createElement("div");
+                $ul.setAttribute("id", 'show' + years[n]);
+                $ul.style.display = "none";
+            for (var j = 0; j < category.length; j++) {
+                var $div = document.createElement("div");
+                    $div.setAttribute("class", 'cate' + category[j]);
+                for (var k = 0; k < len; k++) {                      
+                    if ($node[k].attributes['_year'].value == years[n]) {
+                        if ($node[k].attributes['_category'].value == category[j]) {
+                            $div.appendChild($node[k]);
+                        }
+                    }
+                }
+                $ul.appendChild($div);
+            }
+            $('#timeline-data').append($ul);
+            if (n == 0) {
+                //显示第一条                    
+                if ($('#show' + years[n]).find('.cate1').find('dl').length != 0) {
+                    $('#specialData').show().find('.meta-bluebook').html($('#show' + years[n]).find('.cate1').html());
+                }
+                if ($('#show' + years[n]).find('.cate2').find('dl').length != 0) {
+                    $('#seasonData').show().find('.meta-bluebook').html($('#show' + years[n]).find('.cate2').html());
+                }
+                if ($('#show' + years[n]).find('.cate3').find('dl').length != 0) {
+                    $('#annualData').show().find('.meta-bluebook').html($('#show' + years[n]).find('.cate3').html());
+                }
+            }
+            //判断年份数目做ul宽度调整
+            if (yearlen > 5) {
+                $('#fliterYear').width(listWidth * yearlen);
+                $('.meta-filter-prev').hide();//箭头
+                if (n == 0) {
+                    yearHtml += '<li style="width:' + listWidth + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                } else {
+                    yearHtml += '<li style="width:' + listWidth + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                }
+            } else {
+                if (n == 0) {
+                    yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                } else {
+                    yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                }
+                $('.meta-filter-prev,.meta-filter-next').hide();//箭头
+            };
+
+        }
+        $('#fliterYear').html(yearHtml);
+
+        //切换时间轴数据箭头
+        var initpage = 1,
+            totalpage = Math.ceil(yearlen / 5),
+            repage = yearlen % 5;
+        $('.meta-filter>span').on('click', function () {
+            var $this = $(this),
+                $flag = $this.attr('flag');
+            var initleft = $('#fliterYear').position().left;
+
+            if ($flag == 'next') {
+                initpage++;
+                if (initpage == totalpage) {
+                    //余数为0
+                    repage = repage != 0 ? repage : repage = 5;
+                    $('#fliterYear').animate({ left: initleft - (repage * listWidth) + 'px' }, function () {
+                        $('.meta-filter-prev').show();
+                        $('.meta-filter-next').hide();
+                    });
+                } else {
+                    $('#fliterYear').animate({ left: initleft - yearWidth + 'px' }, function () {
+                        $('.meta-filter-prev,.meta-filter-next').show();
+                    });
+                }
+            } else {
+                initpage--;
+                if (initpage == 1) {
+                    $('#fliterYear').animate({ left:  '0px' }, function () {
+                        $('.meta-filter-prev').hide();
+                        $('.meta-filter-next').show();
+                    });
+                } else {
+                    $('#fliterYear').animate({ left: initleft + yearWidth + 'px' }, function () {
+                        $('.meta-filter-prev,.meta-filter-next').show();
+                    });
+                }
+            }
+        })
+
+        //切换列表
+        $('#fliterYear>li').on('click', function () {
+            var $this  = $(this),
+                $date  = $this.find('a').text(),
+                showid = $this.attr('showid');
+            $this.addClass('active').siblings('li').removeClass('active');
+            //显示第一条                    
+            if ($('#' + showid).find('.cate1').find('dl').length != 0) {
+                $('#specialData').show().find('.meta-bluebook').html($('#' + showid).find('.cate1').html());
+            } else {
+                $('#specialData').hide();
+            }
+            if ($('#' + showid).find('.cate2').find('dl').length != 0) {
+                $('#seasonData').show().find('.meta-bluebook').html($('#' + showid).find('.cate2').html());
+            } else {
+                $('#seasonData').hide();
+            }
+            if ($('#' + showid).find('.cate3').find('dl').length != 0) {
+                $('#annualData').show().find('.meta-bluebook').html($('#' + showid).find('.cate3').html());
+            } else {
+                $('#annualData').hide();
+            }
+        })
+    </script>
 </body>
 </html>

@@ -166,15 +166,11 @@
                     <div class="meta-list-box">
                         <div class="meta-filter-year">
                             <div class="meta-filter">
-                                <a class="meta-filter-prev" href="###"></a>
-                                <ul class="meta-filter-item list-unstyled" id="fliterYear">
-                                    <li class="active"><a>2017</a></li>
-                                    <li><a>2016</a></li>
-                                    <li><a>2015</a></li>
-                                    <li><a>2014</a></li>
-                                    <li><a>2013</a></li>
-                                </ul>
-                                <a class="meta-filter-next" href="###"></a>
+                                <span flag="prev" class="meta-filter-prev"></span>                                
+                                <div class="meta-filter-item">
+                                    <ul class="list-unstyled" id="fliterYear"></ul>
+                                </div>
+                                <span flag="next" class="meta-filter-next"></span>
                             </div>
                         </div>
                         <div class="meta-list">
@@ -182,46 +178,51 @@
 
                             <!-- 模拟数据 -->
                             <ul id="timeline-data" style="display:none;">
-                                <li class="clearfix" year="2017" date="2017-03-10">
+                                <li class="clearfix" _year="2017" _date="2017-03-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2017中国金属学会冶金技术经济21世纪统计</a>
                                     <span class="meta-list-time">2017-03-10</span>
                                 </li>
-                                <li class="clearfix" year="2017" date="2017-05-10">
+                                <li class="clearfix" _year="2017" _date="2017-05-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2017年《中国钢铁工业年鉴2016》</a>
                                     <span class="meta-list-time">2017-05-17</span>
                                 </li>
-                                <li class="clearfix" year="2016" date="2016-03-10">
+                                <li class="clearfix" _year="2016" _date="2016-03-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">中钢网2016年综合核算统计</a>
                                     <span class="meta-list-time">2016-03-01</span>
                                 </li>
-                                <li class="clearfix" year="2016" date="2016-03-10">
+                                <li class="clearfix" _year="2016" _date="2016-03-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2016年全国主要冶金产品产量</a>
                                     <span class="meta-list-time">2016-05-15</span>
                                 </li>
-                                <li class="clearfix" year="2015" date="2015-03-10">
+                                <li class="clearfix" _year="2015" _date="2015-03-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2015年全年冶金钢材进出口核算</a>
                                     <span class="meta-list-time">2015-05-15</span>
                                 </li>
-                                <li class="clearfix" year="2015" date="2015-03-10">
+                                <li class="clearfix" _year="2015" _date="2015-03-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2015年全年冶金钢材进出口核算</a>
                                     <span class="meta-list-time">2015-05-15</span>
                                 </li>
-                                <li class="clearfix" year="2015" date="2015-03-10">
+                                <li class="clearfix" _year="2015" _date="2015-03-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2015年全年冶金钢材进出口核算</a>
                                     <span class="meta-list-time">2015-05-15</span>
                                 </li>
-                                <li class="clearfix" year="2014" date="2014-03-10">
+                                <li class="clearfix" _year="2014" _date="2014-03-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2014年全年冶金钢材进出口核算</a>
                                     <span class="meta-list-time">2014-05-15</span>
                                 </li>
+                                <li class="clearfix" _year="2013" _date="2013-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="statistics_detail.html">2014年全年冶金钢材进出口核算</a>
+                                    <span class="meta-list-time">2013-05-15</span>
+                                </li>                          
                             </ul>
                         </div>
                     </div>
@@ -322,46 +323,103 @@
     <script src="../../js/config.js"></script>
     <script src="../../js/lodash.min.js"></script>
     <script type="text/javascript">
-        var years = [];
-        var ndata = [];
-        var $node = $('#timeline-data>li');
-        var len = $node.length;
+        var years = [],
+            $node = $('#timeline-data>li'),
+            len = $node.length;
 
         for (var i = 0; i < len; i++) {
-            years.push($node[i].attributes['year'].value);
+            years.push($node[i].attributes['_year'].value);
         }
+        //去重
         years = _.uniq(years, true);
-        //时间轴
+        
+        //生成时间轴宽度
+        var yearlen = years.length,
+            yearWidth = $('#fliterYear').width(),
+            listWidth = yearWidth / 5;
+
+        //加载时间轴年份和对应数据列表
         var yearHtml = '';
-        for (var n = 0; n < years.length; n++) {
-            var item_obj = {
-                year: years[n],
-                list: []
-            }
+        for (var n = 0; n < yearlen; n++) {
             var $ul = document.createElement("ul");
-            $ul.setAttribute("id", 'show' + years[n]);
-            //$ul.setAttribute("class", 'list-unstyled');
-            $ul.style.display = "none";
+                $ul.setAttribute("id", 'show' + years[n]);
+                $ul.style.display = "none";
             for (var k = 0; k < len; k++) {
-                if ($node[k].attributes['year'].value == years[n]) {
-                    item_obj.list.push($node[k]);
+                if ($node[k].attributes['_year'].value == years[n]) {
                     $ul.appendChild($node[k]);
                 }
             }
-            ndata.push(item_obj);
-            $('.meta-list').append($ul);
-            if (n == 0) {
-                yearHtml += '<li class="active" showid="show'+years[n]+'"><a>' + years[n] + '</a></li>';
-                $('#Nodedata').html($('#show' + years[n]).html());
+            $('#timeline-data').append($ul);
+
+            //判断年份数目做ul宽度调整
+            if (yearlen > 5) {
+                $('#fliterYear').width(listWidth * yearlen);
+                $('.meta-filter-prev').hide();//箭头
+                if (n == 0) {
+                    //显示第一条
+                    $('#Nodedata').html($('#show' + years[n]).html());
+                    yearHtml += '<li style="width:' + listWidth + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                } else {
+                    yearHtml += '<li style="width:' + listWidth + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                }
             } else {
-                yearHtml += '<li showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
-            }            
+                if (n == 0) {
+                    //显示第一条
+                    $('#Nodedata').html($('#show' + years[n]).html());
+                    yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                } else {
+                    yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                }
+                $('.meta-filter-prev,.meta-filter-next').hide();//箭头
+            };
+            
         }
         $('#fliterYear').html(yearHtml);
+        
+        //切换时间轴数据箭头
+        var initpage = 1,
+            totalpage = Math.ceil(yearlen / 5),
+            repage = yearlen % 5;
+        $('.meta-filter>span').on('click', function () {
+            var $this = $(this),
+                $flag = $this.attr('flag');
+            var initleft = $('#fliterYear').position().left;
+      
+            if ($flag == 'next') {
+                initpage++;
+                if (initpage == totalpage) {
+                    //余数为0
+                    repage = repage != 0 ? repage : repage = 5;
+                    $('#fliterYear').animate({ left: initleft - (repage * listWidth) + 'px' }, function () {
+                        $('.meta-filter-prev').show();
+                        $('.meta-filter-next').hide();
+                    });
+                } else {
+                    $('#fliterYear').animate({ left: initleft - yearWidth + 'px' }, function () {
+                        $('.meta-filter-prev,.meta-filter-next').show();
+                    });
+                }
+            } else {
+                initpage--;
+                if (initpage == 1) {
+                    $('#fliterYear').animate({ left:  '0px' }, function () {
+                        $('.meta-filter-prev').hide();
+                        $('.meta-filter-next').show();
+                    });
+                } else {
+                    $('#fliterYear').animate({ left: initleft + yearWidth + 'px' }, function () {
+                        $('.meta-filter-prev,.meta-filter-next').show();
+                    });
+                }
+            }
+        })
 
+        //切换列表
         $('#fliterYear>li').on('click', function () {
-            var $date = $(this).find('a').text(),
-                showid = $(this).attr('showid');
+            var $this  = $(this),
+                $date  = $this.find('a').text(),
+                showid = $this.attr('showid');
+            $this.addClass('active').siblings('li').removeClass('active');
             $('#Nodedata').html($('#'+showid).html());
         })
     </script>

@@ -167,27 +167,25 @@
                     <div class="meta-list-box">
                         <div class="meta-filter-year">
                             <div class="meta-filter">
-                                <a class="meta-filter-prev" href="###"></a>
-                                <ul class="meta-filter-item list-unstyled">
-                                    <li class="active"><a>2017</a></li>
-                                    <li><a>2016</a></li>
-                                    <li><a>2015</a></li>
-                                    <li><a>2014</a></li>
-                                    <li><a>2013</a></li>
-                                </ul>
-                                <a class="meta-filter-next" href="###"></a>
+                                <span flag="prev" class="meta-filter-prev"></span>
+                                <div class="meta-filter-item">
+                                    <ul class="list-unstyled" id="fliterYear"></ul>
+                                </div>
+                                <span flag="next" class="meta-filter-next"></span>
                             </div>
                         </div>
-                        <div class="meta-media clearfix">
-                            <dl>
+                        <div class="meta-media clearfix" id="Nodedata"></div>
+                        <!-- 模拟数据 -->
+                        <div id="timeline-data" style="display:none;">
+                            <dl _year="2017" _date="2017-03-10">
                                 <dt>
-                                    <img src="../../imgs/media01.jpg"/>
+                                    <img src="../../imgs/media01.jpg" />
                                     <a href="media_detail.html" class="meta-media-play"></a>
                                 </dt>
                                 <dd class="meta-media-title"><a title="中国钢铁新能源会议" href="media_detail.html"><b>【会议视频】</b>中国钢铁新能源会议</a></dd>
                                 <dd class="meta-media-info">会议着重从技术经济视角，就国内宏观经济发展、钢铁工业转型升级、行业经济运行、提升......</dd>
                             </dl>
-                            <dl>
+                            <dl _year="2017" _date="2017-03-10">
                                 <dt>
                                     <img src="../../imgs/media01.jpg" />
                                     <a href="###" class="meta-media-play"></a>
@@ -195,15 +193,31 @@
                                 <dd class="meta-media-title"><a title="中国钢铁新能源会议" href="media_detail.html"><b>【会议视频】</b>中国钢铁新能源会议</a></dd>
                                 <dd class="meta-media-info">会议着重从技术经济视角，就国内宏观经济发展、钢铁工业转型升级、行业经济运行、提升企业核心竞争力和冶金技术经济学科发展等方面，开展高端研讨与成果交流，为企业贡献有价值的建议。</dd>
                             </dl>
-                            <dl>
+                            <dl _year="2016" _date="2017-03-10">
                                 <dt>
-                                    <img src="../../imgs/media01.jpg"/>
+                                    <img src="../../imgs/media01.jpg" />
                                     <a href="###" class="meta-media-play"></a>
                                 </dt>
                                 <dd class="meta-media-title"><a title="中国钢铁新能源会议" href="media_detail.html"><b>【会议视频】</b>中国钢铁新能源会议</a></dd>
                                 <dd class="meta-media-info">会议着重从技术经济视角，就国内宏观经济发展、钢铁工业转型升级、行业经济运行、提升......</dd>
                             </dl>
-                            <dl>
+                            <dl _year="2015" _date="2017-03-10">
+                                <dt>
+                                    <img src="../../imgs/media01.jpg" />
+                                    <a href="###" class="meta-media-play"></a>
+                                </dt>
+                                <dd class="meta-media-title"><a title="中国钢铁新能源会议" href="media_detail.html"><b>【会议视频】</b>中国钢铁新能源会议</a></dd>
+                                <dd class="meta-media-info">会议着重从技术经济视角，就国内宏观经济发展、钢铁工业转型升级、行业经济运行、提升企业核心竞争力和冶金技术经济学科发展等方面，开展高端研讨与成果交流，为企业贡献有价值的建议。</dd>
+                            </dl>
+                            <dl _year="2014" _date="2017-03-10">
+                                <dt>
+                                    <img src="../../imgs/media01.jpg" />
+                                    <a href="###" class="meta-media-play"></a>
+                                </dt>
+                                <dd class="meta-media-title"><a title="中国钢铁新能源会议" href="media_detail.html"><b>【会议视频】</b>中国钢铁新能源会议</a></dd>
+                                <dd class="meta-media-info">会议着重从技术经济视角，就国内宏观经济发展、钢铁工业转型升级、行业经济运行、提升企业核心竞争力和冶金技术经济学科发展等方面，开展高端研讨与成果交流，为企业贡献有价值的建议。</dd>
+                            </dl>
+                            <dl _year="2013" _date="2017-03-10">
                                 <dt>
                                     <img src="../../imgs/media01.jpg" />
                                     <a href="###" class="meta-media-play"></a>
@@ -308,5 +322,106 @@
 	<script src="../../codebase/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../../js/common.js"></script>
 	<script src="../../js/config.js"></script>
+    <script src="../../js/lodash.min.js"></script>
+    <script type="text/javascript">
+        var years = [],
+            $node = $('#timeline-data>dl'),
+            len = $node.length;
+
+        for (var i = 0; i < len; i++) {
+            years.push($node[i].attributes['_year'].value);
+        }
+        //去重
+        years = _.uniq(years, true);
+        //生成时间轴宽度
+        var yearlen = years.length,
+            yearWidth = $('#fliterYear').width(),
+            listWidth = yearWidth / 5;
+
+        //加载时间轴年份和对应数据列表
+        var yearHtml = '';
+        for (var n = 0; n < yearlen; n++) {
+            var $ul = document.createElement("div");
+                $ul.setAttribute("id", 'show' + years[n]);
+                $ul.style.display = "none";
+            for (var k = 0; k < len; k++) {
+                if ($node[k].attributes['_year'].value == years[n]) {
+                    $ul.appendChild($node[k]);
+                }
+            }
+            $('#timeline-data').append($ul);
+
+            //判断年份数目做ul宽度调整
+            if (yearlen > 5) {
+                $('#fliterYear').width(listWidth * yearlen);
+                $('.meta-filter-prev').hide();//箭头
+                if (n == 0) {
+                    //显示第一条
+                    $('#Nodedata').html($('#show' + years[n]).html());
+                    yearHtml += '<li style="width:' + listWidth + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                } else {
+                    yearHtml += '<li style="width:' + listWidth + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                }
+            } else {
+                if (n == 0) {
+                    //显示第一条
+                    $('#Nodedata').html($('#show' + years[n]).html());
+                    yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                } else {
+                    yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                }
+                $('.meta-filter-prev,.meta-filter-next').hide();//箭头
+            };
+
+        }
+        $('#fliterYear').html(yearHtml);
+
+        //切换时间轴数据箭头
+        var initpage = 1,
+            totalpage = Math.ceil(yearlen / 5),
+            repage = yearlen % 5;
+        $('.meta-filter>span').on('click', function () {
+            var $this = $(this),
+                $flag = $this.attr('flag');
+            var initleft = $('#fliterYear').position().left;
+
+            if ($flag == 'next') {
+                initpage++;
+                if (initpage == totalpage) {
+                    //余数为0
+                    repage = repage != 0 ? repage : repage = 5;
+                    $('#fliterYear').animate({ left: initleft - (repage * listWidth) + 'px' }, function () {
+                        $('.meta-filter-prev').show();
+                        $('.meta-filter-next').hide();
+                    });
+                } else {
+                    $('#fliterYear').animate({ left: initleft - yearWidth + 'px' }, function () {
+                        $('.meta-filter-prev,.meta-filter-next').show();
+                    });
+                }
+            } else {
+                initpage--;
+                if (initpage == 1) {
+                    $('#fliterYear').animate({ left:  '0px' }, function () {
+                        $('.meta-filter-prev').hide();
+                        $('.meta-filter-next').show();
+                    });
+                } else {
+                    $('#fliterYear').animate({ left: initleft + yearWidth + 'px' }, function () {
+                        $('.meta-filter-prev,.meta-filter-next').show();
+                    });
+                }
+            }
+        })
+
+        //切换列表
+        $('#fliterYear>li').on('click', function () {
+            var $this  = $(this),
+                $date  = $this.find('a').text(),
+                showid = $this.attr('showid');
+            $this.addClass('active').siblings('li').removeClass('active');
+            $('#Nodedata').html($('#'+showid).html());
+        })
+    </script>
 </body>
 </html>
