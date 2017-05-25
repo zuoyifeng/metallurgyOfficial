@@ -4,19 +4,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="renderer" content="webkit" />    
+    <meta name="renderer" content="webkit" />
     <title>统计资料_信息服务_冶金工业规划研究院</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="../../codebase/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../../css/main.css"  rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
     <!--[if lt IE 9]>
-	  <script src="../../js/html5shiv.min.js"></script>
-	  <script src="../../js/respond.min.js"></script>
-    <![endif]-->   
+      <script src="../../js/html5shiv.min.js"></script>
+      <script src="../../js/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>	
-	<header class="meta-header navbar-fixed-top meta-header-other">
+<body>
+    <header class="meta-header navbar-fixed-top meta-header-other">
         <div class="container clearfix">
             <div class="navbar-header">
                 <a class="navbar-brand" href="../../index.html"><img src="../../imgs/logo_blue.png" /></a>
@@ -112,18 +112,18 @@
                         <li><a href="../service/press.html">书刊信息</a></li>
                         <li><a href="../service/train.html">业务培训</a></li>
                         <li><a href="../service/expert.html">专家咨询</a></li>
-                        <li><a href="../service/media.html">多媒体信息</a></li>	
+                        <li><a href="../service/media.html">多媒体信息</a></li>
                     </ul>
                 </li>
                 <li><a href="../communist/committee.html">党的建设</a></li>
                 <li><a href="../artonce/contact.html">联系我们</a></li>
             </ul>
         </nav>
-  	</header>
-	<div class="meta-docs-banner"></div>
-	<div class="container meta-wrap">
-		<div class="meta-main-head">
-			<img src="../../imgs/head_top.jpg"/>
+    </header>
+    <div class="meta-docs-banner"></div>
+    <div class="container meta-wrap">
+        <div class="meta-main-head">
+            <img src="../../imgs/head_top.jpg" />
             <div class="meta-crumb">
                 <ol class="breadcrumb">
                     <li>当前位置：</li>
@@ -132,8 +132,8 @@
                     <li class="active">统计资料</li>
                 </ol>
             </div>
-		</div>
-		<div class="meta-main clearfix">
+        </div>
+        <div class="meta-main clearfix">
             <div class="row">
                 <div class="col-xs-2 meta-submenu">
                     <div class="meta-submenu-top">
@@ -167,7 +167,7 @@
                         <div class="meta-filter-year">
                             <div class="meta-filter">
                                 <a class="meta-filter-prev" href="###"></a>
-                                <ul class="meta-filter-item list-unstyled">
+                                <ul class="meta-filter-item list-unstyled" id="fliterYear">
                                     <li class="active"><a>2017</a></li>
                                     <li><a>2016</a></li>
                                     <li><a>2015</a></li>
@@ -178,129 +178,192 @@
                             </div>
                         </div>
                         <div class="meta-list">
-                            <ul class="list-unstyled">
-                                <li class="clearfix">
+                            <ul class="list-unstyled" id="Nodedata"></ul>
+
+                            <!-- 模拟数据 -->
+                            <ul id="timeline-data" style="display:none;">
+                                <li class="clearfix" year="2017" date="2017-03-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2017中国金属学会冶金技术经济21世纪统计</a>
                                     <span class="meta-list-time">2017-03-10</span>
                                 </li>
-                                <li class="clearfix">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="statistics_detail.html">中钢网2016年综合核算统计</a>
-                                    <span class="meta-list-time">2017-03-01</span>
-                                </li>
-                                <li class="clearfix">
+                                <li class="clearfix" year="2017" date="2017-05-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2017年《中国钢铁工业年鉴2016》</a>
-                                    <span class="meta-list-time">2017-02-17</span>
+                                    <span class="meta-list-time">2017-05-17</span>
                                 </li>
-                                <li class="clearfix">
+                                <li class="clearfix" year="2016" date="2016-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="statistics_detail.html">中钢网2016年综合核算统计</a>
+                                    <span class="meta-list-time">2016-03-01</span>
+                                </li>
+                                <li class="clearfix" year="2016" date="2016-03-10">
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2016年全国主要冶金产品产量</a>
-                                    <span class="meta-list-time">2017-05-15</span>
+                                    <span class="meta-list-time">2016-05-15</span>
                                 </li>
-                                <li class="clearfix">
+                                <li class="clearfix" year="2015" date="2015-03-10">
                                     <span class="meta-list-arrow">·</span>
-                                    <a href="statistics_detail.html">2016年全年冶金钢材进出口核算</a>
-                                    <span class="meta-list-time">2017-05-15</span>
+                                    <a href="statistics_detail.html">2015年全年冶金钢材进出口核算</a>
+                                    <span class="meta-list-time">2015-05-15</span>
+                                </li>
+                                <li class="clearfix" year="2015" date="2015-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="statistics_detail.html">2015年全年冶金钢材进出口核算</a>
+                                    <span class="meta-list-time">2015-05-15</span>
+                                </li>
+                                <li class="clearfix" year="2015" date="2015-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="statistics_detail.html">2015年全年冶金钢材进出口核算</a>
+                                    <span class="meta-list-time">2015-05-15</span>
+                                </li>
+                                <li class="clearfix" year="2014" date="2014-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="statistics_detail.html">2014年全年冶金钢材进出口核算</a>
+                                    <span class="meta-list-time">2014-05-15</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-		</div>
-	</div>
-	<footer class="meta-footer">
-		<div class="meta-navigation">		
-			<div class="container">
-			   <div class="row">					
-					<div class="col-xs-4">
-						<div class="row">
-							<div class="col-xs-6">
-								<dl>
-									<dt>政府机关网站</dt>
-									<dd><a href="">国家发改委</a></dd>
-									<dd><a>工信部</a></dd>
-									<dd><a>中华人民共和国环境保护部</a></dd>
-									<dd><a>国务院国资委</a></dd>
-									<dd><a>中国钢铁工业协会</a></dd>
-								</dl>
-							</div>
-							<div class="col-xs-6">
-								<dl>
-									<dt>企事业单位网站</dt>
-									<dd><a>中国金属学会冶金技术经济分会</a></dd>
-									<dd><a>工信部</a></dd>
-									<dd><a>中华人民共和国环境保护部</a></dd>
-									<dd><a>国务院国资委</a></dd>
-									<dd><a>中国钢铁工业协会</a></dd>
-								</dl>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-4">
-						<div class="row">
-							<div class="col-xs-6">
-								<dl>
-									<dt>相关研究机构网站</dt>
-									<dd><a>中国金属学会冶金技术经济分会</a></dd>
-									<dd><a>工信部</a></dd>
-									<dd><a>中华人民共和国环境保护部</a></dd>
-									<dd><a>国务院国资委</a></dd>
-									<dd><a>中国钢铁工业协会</a></dd>
-								</dl>
-							</div>
-							<div class="col-xs-6">
-								<dl>
-									<dt>国外专业网站</dt>
-									<dd><a>工业生产力研究所</a></dd>
-									<dd><a>工信部</a></dd>
-									<dd><a>中华人民共和国环境保护部</a></dd>
-									<dd><a>国务院国资委</a></dd>
-									<dd><a>中国钢铁工业协会</a></dd>
-								</dl>
-							</div>
-						</div>				
-					</div>
-					<div class="col-xs-4">
-						<div class="meta-footer-qrcode">
-							<img src="../../imgs/qrcode.jpg" alt="扫描二维码，关注我！" />
-							<span>服务热线：<strong>010-65256519</strong></span>
-						</div>
-					</div>
-			   </div>
-			</div>
-		</div>
-		<div class="meta-copyright">
-			<p class="meta-access">本站首页已被访问：044916次</p>
-			<p class="meta-site-info">版权所有 Copyright© 2012-2015 冶金工业规划研究院   京ICP备12022799号</p>
-			<p class="meta-site-info">地址：北京市东城区东四西大街46号    邮政编码：100711    联系电话：010-65256519     传真：010-65131945</p>
-		</div>
-	</footer>
-	
-	<!--  浮动窗口begin  -->
-	 <div class="meta-contact">
-		 <div class="meta-message meta-msg">
-			 <h4>业务咨询</h4>
-			 <div>
-				<span>总业务咨询</span>
-			 	<span class="meta-msgbtn">和我联系</span>
-			 </div>
-			 <div>
-				<span>Contact us</span>
-				<span class="meta-msgbtn">和我联系</span>
-			 </div>
-		 </div>
-		 <div class="meta-message">
-			 <h4>在线报名</h4>
-			 <span class="meta-signup">立即报名</span>
-		 </div>
-	 </div>
-	<!--  浮动窗口end  -->
-	<script src="../../js/jquery.min.js"></script>
-	<script src="../../codebase/bootstrap/js/bootstrap.min.js"></script>
-	<script src="../../js/common.js"></script>
-	<script src="../../js/config.js"></script>
+        </div>
+    </div>
+    <footer class="meta-footer">
+        <div class="meta-navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <dl>
+                                    <dt>政府机关网站</dt>
+                                    <dd><a href="">国家发改委</a></dd>
+                                    <dd><a>工信部</a></dd>
+                                    <dd><a>中华人民共和国环境保护部</a></dd>
+                                    <dd><a>国务院国资委</a></dd>
+                                    <dd><a>中国钢铁工业协会</a></dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-6">
+                                <dl>
+                                    <dt>企事业单位网站</dt>
+                                    <dd><a>中国金属学会冶金技术经济分会</a></dd>
+                                    <dd><a>工信部</a></dd>
+                                    <dd><a>中华人民共和国环境保护部</a></dd>
+                                    <dd><a>国务院国资委</a></dd>
+                                    <dd><a>中国钢铁工业协会</a></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <dl>
+                                    <dt>相关研究机构网站</dt>
+                                    <dd><a>中国金属学会冶金技术经济分会</a></dd>
+                                    <dd><a>工信部</a></dd>
+                                    <dd><a>中华人民共和国环境保护部</a></dd>
+                                    <dd><a>国务院国资委</a></dd>
+                                    <dd><a>中国钢铁工业协会</a></dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-6">
+                                <dl>
+                                    <dt>国外专业网站</dt>
+                                    <dd><a>工业生产力研究所</a></dd>
+                                    <dd><a>工信部</a></dd>
+                                    <dd><a>中华人民共和国环境保护部</a></dd>
+                                    <dd><a>国务院国资委</a></dd>
+                                    <dd><a>中国钢铁工业协会</a></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="meta-footer-qrcode">
+                            <img src="../../imgs/qrcode.jpg" alt="扫描二维码，关注我！" />
+                            <span>服务热线：<strong>010-65256519</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="meta-copyright">
+            <p class="meta-access">本站首页已被访问：044916次</p>
+            <p class="meta-site-info">版权所有 Copyright© 2012-2015 冶金工业规划研究院   京ICP备12022799号</p>
+            <p class="meta-site-info">地址：北京市东城区东四西大街46号    邮政编码：100711    联系电话：010-65256519     传真：010-65131945</p>
+        </div>
+    </footer>
+
+    <!--  浮动窗口begin  -->
+    <div class="meta-contact">
+        <div class="meta-message meta-msg">
+            <h4>业务咨询</h4>
+            <div>
+                <span>总业务咨询</span>
+                <span class="meta-msgbtn">和我联系</span>
+            </div>
+            <div>
+                <span>Contact us</span>
+                <span class="meta-msgbtn">和我联系</span>
+            </div>
+        </div>
+        <div class="meta-message">
+            <h4>在线报名</h4>
+            <span class="meta-signup">立即报名</span>
+        </div>
+    </div>
+    <!--  浮动窗口end  -->
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../codebase/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/config.js"></script>
+    <script src="../../js/lodash.min.js"></script>
+    <script type="text/javascript">
+        var years = [];
+        var ndata = [];
+        var $node = $('#timeline-data>li');
+        var len = $node.length;
+
+        for (var i = 0; i < len; i++) {
+            years.push($node[i].attributes['year'].value);
+        }
+        years = _.uniq(years, true);
+        //时间轴
+        var yearHtml = '';
+        for (var n = 0; n < years.length; n++) {
+            var item_obj = {
+                year: years[n],
+                list: []
+            }
+            var $ul = document.createElement("ul");
+            $ul.setAttribute("id", 'show' + years[n]);
+            //$ul.setAttribute("class", 'list-unstyled');
+            $ul.style.display = "none";
+            for (var k = 0; k < len; k++) {
+                if ($node[k].attributes['year'].value == years[n]) {
+                    item_obj.list.push($node[k]);
+                    $ul.appendChild($node[k]);
+                }
+            }
+            ndata.push(item_obj);
+            $('.meta-list').append($ul);
+            if (n == 0) {
+                yearHtml += '<li class="active" showid="show'+years[n]+'"><a>' + years[n] + '</a></li>';
+                $('#Nodedata').html($('#show' + years[n]).html());
+            } else {
+                yearHtml += '<li showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+            }            
+        }
+        $('#fliterYear').html(yearHtml);
+
+        $('#fliterYear>li').on('click', function () {
+            var $date = $(this).find('a').text(),
+                showid = $(this).attr('showid');
+            $('#Nodedata').html($('#'+showid).html());
+        })
+    </script>
 </body>
 </html>
