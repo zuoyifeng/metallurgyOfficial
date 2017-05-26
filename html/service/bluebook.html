@@ -372,8 +372,8 @@
                 $ul.appendChild($div);
             }
             $('#timeline-data').append($ul);
-            if (n == 0) {
-                //显示第一条                    
+            //默认显示第一组   
+            if (n == 0) {                 
                 if ($('#show' + years[n]).find('.cate1').find('dl').length != 0) {
                     $('#specialData').show().find('.meta-bluebook').html($('#show' + years[n]).find('.cate1').html());
                 }
@@ -406,7 +406,7 @@
         $('#fliterYear').html(yearHtml);
 
         //切换时间轴数据箭头
-        var initpage = 1,
+        var initpage = 1, isScroll = false,
             totalpage = Math.ceil(yearlen / 5),
             repage = yearlen % 5;
         $('.meta-filter>span').on('click', function () {
@@ -414,6 +414,10 @@
                 $flag = $this.attr('flag');
             var initleft = $('#fliterYear').position().left;
 
+            if (isScroll) {
+                return false;
+            }
+            isScroll = true;
             if ($flag == 'next') {
                 initpage++;
                 if (initpage == totalpage) {
@@ -422,10 +426,12 @@
                     $('#fliterYear').animate({ left: initleft - (repage * listWidth) + 'px' }, function () {
                         $('.meta-filter-prev').show();
                         $('.meta-filter-next').hide();
+                        isScroll = false;
                     });
                 } else {
                     $('#fliterYear').animate({ left: initleft - yearWidth + 'px' }, function () {
                         $('.meta-filter-prev,.meta-filter-next').show();
+                        isScroll = false;
                     });
                 }
             } else {
@@ -434,10 +440,12 @@
                     $('#fliterYear').animate({ left:  '0px' }, function () {
                         $('.meta-filter-prev').hide();
                         $('.meta-filter-next').show();
+                        isScroll = false;
                     });
                 } else {
                     $('#fliterYear').animate({ left: initleft + yearWidth + 'px' }, function () {
                         $('.meta-filter-prev,.meta-filter-next').show();
+                        isScroll = false;
                     });
                 }
             }
@@ -449,7 +457,7 @@
                 $date  = $this.find('a').text(),
                 showid = $this.attr('showid');
             $this.addClass('active').siblings('li').removeClass('active');
-            //显示第一条                    
+
             if ($('#' + showid).find('.cate1').find('dl').length != 0) {
                 $('#specialData').show().find('.meta-bluebook').html($('#' + showid).find('.cate1').html());
             } else {

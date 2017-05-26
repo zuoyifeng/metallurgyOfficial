@@ -222,7 +222,7 @@
                                     <span class="meta-list-arrow">·</span>
                                     <a href="statistics_detail.html">2014年全年冶金钢材进出口核算</a>
                                     <span class="meta-list-time">2013-05-15</span>
-                                </li>                          
+                                </li>                     
                             </ul>
                         </div>
                     </div>
@@ -377,14 +377,18 @@
         $('#fliterYear').html(yearHtml);
         
         //切换时间轴数据箭头
-        var initpage = 1,
+        var initpage = 1, isScroll = false,
             totalpage = Math.ceil(yearlen / 5),
             repage = yearlen % 5;
         $('.meta-filter>span').on('click', function () {
             var $this = $(this),
                 $flag = $this.attr('flag');
             var initleft = $('#fliterYear').position().left;
-      
+
+            if (isScroll) {
+                return false;
+            }
+            isScroll = true;
             if ($flag == 'next') {
                 initpage++;
                 if (initpage == totalpage) {
@@ -393,10 +397,12 @@
                     $('#fliterYear').animate({ left: initleft - (repage * listWidth) + 'px' }, function () {
                         $('.meta-filter-prev').show();
                         $('.meta-filter-next').hide();
+                        isScroll = false;
                     });
                 } else {
                     $('#fliterYear').animate({ left: initleft - yearWidth + 'px' }, function () {
                         $('.meta-filter-prev,.meta-filter-next').show();
+                        isScroll = false;
                     });
                 }
             } else {
@@ -405,10 +411,12 @@
                     $('#fliterYear').animate({ left:  '0px' }, function () {
                         $('.meta-filter-prev').hide();
                         $('.meta-filter-next').show();
+                        isScroll = false;
                     });
                 } else {
                     $('#fliterYear').animate({ left: initleft + yearWidth + 'px' }, function () {
                         $('.meta-filter-prev,.meta-filter-next').show();
+                        isScroll = false;
                     });
                 }
             }
