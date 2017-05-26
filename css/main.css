@@ -21,9 +21,22 @@ body {
 	padding-bottom: 0;
 	height: auto;
 }
+.navbar-header {
+    float: left;
+    margin-right: 0;
+    margin-left: 0;
+}
+.navbar-nav {
+    margin: 0;
+}
+.navbar-nav>li{
+    float: left;
+}
 .meta-menu .nav > li > a{
 	color: #fff;
 	font-size: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .meta-menu .nav .open>a, 
 .meta-menu .nav .open>a:focus, 
@@ -87,10 +100,10 @@ body {
     text-decoration: none;
 }
 .meta-nav-college .dropdown-menu{
-	width: 364px;
+	width: 364px !important;
 }
 .meta-nav-business .dropdown-menu{
-	width: 628px;
+	width: 628px !important;
 }
 .meta-nav-business .meta-menu-tab>ul{
 	float: left;
@@ -1650,6 +1663,17 @@ body {
 /*子页面公共样式结束*/
 
 /*响应式*/
+@media (max-width: 767px){
+    .navbar-nav .open .dropdown-menu {
+         position: absolute; 
+         float: left; 
+         margin-top: 0; 
+         background-color: #fff; 
+         border: 1px solid rgba(0,0,0,.15); 
+         -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175); 
+         box-shadow: 0 6px 12px rgba(0,0,0,.175); 
+    }
+}
 @media screen and (min-width: 768px) {
 	.carousel-indicators {
 		bottom: 10px;
