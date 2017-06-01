@@ -10,12 +10,11 @@ body {
 }
 /*头部*/
 .meta-header{
-    background:url(../imgs/header_bg.png);
-    border-bottom:1px solid rgba(61,61,61,0.1);
-	position: absolute;
+    background-color:#fff;
 }
 .meta-header nav.navbar{
 	margin-bottom: 0px;
+    min-height:40px;
 }
 .meta-header .navbar-brand{
 	padding-bottom: 0;
@@ -32,11 +31,11 @@ body {
 .navbar-nav>li{
     float: left;
 }
-.meta-menu .nav > li > a{
-	color: #fff;
+.meta-menu .nav > li > a{    
+	color: #1d2f57;
 	font-size: 18px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
 .meta-menu .nav .open>a, 
 .meta-menu .nav .open>a:focus, 
@@ -58,52 +57,95 @@ body {
 	border-color:transparent;
 	border-style:dashed dashed solid;
 	border-width:0 8px 8px;
-	content:"";
-	display:block;
+    content: " ";
+    display: table;
 	height:0;
 /*	pointer-events:none;*/
 	position:absolute;
-	left:45px;
+	left:145px;
 	width:0;
-	z-index:1;
 }
 .meta-menu li.dropdown .dropdown-menu:after{
 	border-bottom-color:#fff;
 	top:-7px;
+    clear:both;
 }
 .meta-menu li.dropdown .dropdown-menu:before{
 	border-bottom-color:#ddd;
 	top:-8px;
 }
 .meta-menu li.dropdown .dropdown-menu{
-	padding: 30px 5px 20px 20px;
+    padding:0px;
+    /*display:block;*/
+    background:none;
+    border-radius:0;
+    box-shadow:none;
 }
-.meta-menu li.dropdown .dropdown-menu>li{
+.meta-menu li.dropdown .dropdown-menu>ul>li{
 	float:left;
 	width: 33.3333%;
 }
-.meta-menu li.dropdown .dropdown-menu>li>a,
-.meta-menu-tab .meta-menu-tabcont ul>li>a{
-	padding: 6px 10px;
-	margin: 0 15px 10px 0;
-	background-color: #E5E5E5;
-	-webkit-border-radius:2px;
-	-moz-border-radius:2px;
-	border-radius: 2px;
-	overflow: hidden;
+.meta-menu .dropdown-menu .meta-menu-tab {
+    float:right;
+    width:573px;
+    min-height:137px;
+    background:url(../imgs/menu_bg.png);
+    padding:20px 10px;
 }
-.meta-menu li.dropdown .dropdown-menu>li>a:hover,
-.meta-menu-tab .meta-menu-tabcont ul>li>a:hover,
 .meta-menu-tab>ul>li.hover{
 	background-color: #EC7D12;
 	color: #fff;	
     text-decoration: none;
 }
 .meta-nav-college .dropdown-menu{
-	width: 364px !important;
+	width: 480px !important;
 }
-.meta-nav-business .dropdown-menu{
-	width: 628px !important;
+.meta-menu .navbar-right .meta-nav-business .dropdown-menu{
+	width:770px !important;
+    left: -120px;
+}
+.meta-menu li.meta-nav-business .dropdown-menu:after,
+.meta-menu li.meta-nav-business .dropdown-menu:before {
+    left:162px;
+}
+.meta-menu .navbar-right .dropdown-menu {
+    right:auto;
+    left: -100px;
+}
+.meta-menu .dropdown-menu .dropdown-img {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:10px;
+    width:195px;
+    height:100%;
+    background-color:#fff;
+}
+.meta-menu .dropdown-menu .dropdown-img img{
+    width:100%;
+    display:block;
+}
+.meta-menu .dropdown-menu .menu-right{
+    float:right;
+    width:283px;
+    min-height:137px;
+    background-image:url(../imgs/menu_bg.png);
+    padding:20px 10px;
+}
+.meta-menu li.dropdown .dropdown-menu > ul > li > a ,
+.meta-menu-tab .meta-menu-tabcont ul>li>a{
+    color:#000;
+    display:block;
+    text-align:center;
+    line-height:30px;
+    text-decoration:none;
+    white-space: nowrap;
+    overflow:hidden;
+	text-overflow:ellipsis;
+}
+.meta-menu-tab .meta-menu-tabcont ul>li>a:hover,    
+.meta-menu li.dropdown .dropdown-menu > ul > li > a:hover {
+    color:#ff8500;
 }
 .meta-nav-business .meta-menu-tab>ul{
 	float: left;
@@ -125,9 +167,9 @@ body {
     color:#fff;
 }
 .meta-menu-tab .meta-menu-tabcont{
-	width: 500px;
+	width: 450px;
 	float: left;
-	border-left:1px solid #E0E0E0;
+	border-left:1px solid #f2f2f2;
 	margin-top: -15px;
 	padding: 15px 0 0 20px;
 	min-height: 156px;
@@ -137,12 +179,7 @@ body {
 	width: 50%;
 }
 .meta-menu-tab .meta-menu-tabcont ul>li>a{
-	display: block;
-    clear: both;
-    font-weight: 400;
-    line-height: 1.42857143;
-    color: #333;
-    white-space: nowrap;
+    text-align:left;
 }
 .meta-header-tool{
 	max-width: 620px;
@@ -152,7 +189,7 @@ body {
 .meta-header-tool .meta-tool-email a{
 	font-size: 14px;
 	line-height: 50px;
-	color:#fff;
+    color: #1d2f57;
 	display: inline-block;
 	padding: 0px 10px;
 	position: relative;
@@ -163,16 +200,16 @@ body {
 	top: 16px;
 	right: 0px;
 	width: 1px;
-	background-color: #e5e5e5;
+	background-color: #1d2f57;
 	height: 18px;
 }
 .meta-header-tool .meta-tool-tel{
-	color:#fff;
+    color: #1d2f57;
 	font-size: 16px;
 	line-height: 50px;
 }
 .meta-header-tool .meta-tool-tel .glyphicon{
-	vertical-align: text-bottom;
+	vertical-align:-2px;
 	font-size: 18px;
 	margin-right: 3px;
 }
@@ -209,7 +246,7 @@ body {
 }
 .meta-banner-fluid .container{
 	position: absolute;
-	top: 126px;
+	top: 0px;
 	left: 50%;
 	bottom: 0;
 	margin-left: -615px;
@@ -226,7 +263,7 @@ body {
     top: 50%;
 	left: 50%;
     z-index: 5;
-	margin-top: -40px;
+	margin-top: -26px;
 	margin-left: -20px;
 	background-image:url(../imgs/banner_arrow.png);
 	background-repeat: no-repeat;
@@ -278,7 +315,7 @@ body {
 	left: 50%;
 	width: 95px;
 	height: 95px;
-	margin-top: -50px;
+	margin-top: -47px;
 	margin-left: -47.5px;
 	cursor: pointer;
     filter:alpha(opacity=80); 
@@ -332,15 +369,17 @@ body {
 /*小播放器*/
 .meta-banner{
 	padding-right: 0;
-	height: 350px;
+	/*height: 350px;*/
 	overflow: hidden;
+    width:34.5%;
 }
 .meta-banner .carousel{
-	border:1px solid #E1E1E1;
-	padding: 2px;
+	/*border:1px solid #E1E1E1;*/
+    /*padding:2px;*/
 }
 .meta-banner .carousel-inner .item a{
-	height: 344px;
+	/*height: 304px;*/
+	height: 310px;
 	background-color: #EFEFEF;
 	background-position: center;
 	background-size:100% auto;
@@ -349,9 +388,9 @@ body {
 }
 .meta-banner .carousel-inner .carousel-caption{
 	right: 0;left: 0;
-	bottom: 36px;
+	bottom: 0;
     background-image:url(../imgs/header_bg.png)\9;
-	padding:6px 10px;
+	padding:9px 90px 9px 10px;
 	text-align: left;	
 	overflow:hidden;
 	text-overflow:ellipsis;
@@ -361,15 +400,15 @@ body {
 	background-color: rgba(51,51,51,0.5);
 }
 .meta-banner .carousel-indicators{
-	background-color: #fff;
-	left: 0;right: 0;bottom: 0;
+    left:auto;
+	right: 10px;
+    bottom: 0;
 	margin: 0;
 	width: auto;
     height:38px;
 	line-height: 38px;
 }
 .meta-banner .carousel-indicators li{
-    background-color:#fff;
 	width: 12px;
 	height: 12px;
 	margin: 0;
@@ -378,6 +417,11 @@ body {
     *text-indent:0;
     *display:inline;
     *zoom:1;
+    border-color:transparent;
+    background-color:transparent;
+}
+.carousel-indicators .active{
+    background-color:transparent;
 }
 .meta-banner .carousel-indicators li div{
     width: 100%; height: 100%;
@@ -387,33 +431,22 @@ body {
     margin: 0px 1px 0px 0;
     border-width: 0vw;
     margin: 0vw;    
-	-webkit-box-shadow:inset 2px 2px 2px #ccc;  
-	-moz-box-shadow:inset 2px 2px 2px #ccc;  
-	box-shadow:inset 2px 2px 2px #ccc;
-    color: #E5E5E5;
+	-webkit-box-shadow:inset 2px 2px 2px #444;  
+	-moz-box-shadow:inset 2px 2px 2px #444;  
+	box-shadow:inset 2px 2px 2px #444;
+    color: #999;
     background-color: currentColor;
 }
 .meta-banner .carousel-indicators li.active div {
 	color: #F8110F;
 	-webkit-box-shadow:inset 2px 3px 2px #E60606;  
 	-moz-box-shadow:inset 2px 3px 2px #E60606;  
-	box-shadow:inset 2px 3px 2px #E60606;  
+	box-shadow:inset 2px 3px 2px #E60606; 
 }
-.meta-banner-more{
-	position: absolute;
-	bottom: 5px;
-	right:20px;
-	color: #1a84ae;
-	border:1px solid #1a84ae;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	padding: 2px 10px;
-	z-index: 16;
-}
+
 .meta-banner .carousel-control{	
 	top: 50%;
-	margin-top: -45px;
+	margin-top: -25px;
 	bottom: auto;
 	background-image:url(../imgs/banner_arrow_white.png);
     background-color:none;
@@ -454,27 +487,43 @@ body {
     background-position:-165px 0;
 }
 /*滑动门*/
+.meta-tab {
+    width:44%;
+}
 .meta-tab .nav-tabs{
-	background: #E8E8E8;
+    background-image:url(../imgs/column_bg.png);
+	border:1px solid #e1e1e1;
+    border-bottom:none;
+    height:40px;
+}
+.meta-tab .nav-tabs>li {
+    margin-top: -1px;
+    margin-bottom:auto;
 }
 .meta-tab .nav-tabs>li>a{
 	border-radius:0;
-	color: #000;
-	font-size: 15px;
+	color: #222;
+    font-size:15px;
     font-weight: bold;
+    padding: 8px 15px;
 }
 .meta-tab .nav-tabs>li.active>a, 
 .meta-tab .nav-tabs>li.active>a:focus, 
 .meta-tab .nav-tabs>li.active>a:hover{
-	border-top:2px solid #3069BA;	
+	border-top:2px solid #3069BA;
+}
+.nav-tabs > li:first-child.active > a, 
+.nav-tabs > li:first-child.active > a:focus, 
+.nav-tabs > li:first-child.active > a:hover {
+    border-left-color:transparent;
 }
 .meta-tab .tab-content{
-	min-height: 306px;
+	min-height: 270px;
 	border:1px solid #E1E1E1;
 	border-top: none;
 }
 .meta-tab .tab-content ul{
-	padding: 10px 15px;
+	padding: 15px;
 	margin-bottom: 0;
 }
 .meta-tab .tab-content ul li a{
@@ -484,7 +533,7 @@ body {
 	text-overflow:ellipsis;
 	white-space: nowrap;
 	line-height: 38px;
-	max-width: 80%;
+	max-width: 75%;
 }
 .meta-tab .tab-content ul li a:hover{
 	color: #1a84ae;
@@ -504,18 +553,47 @@ body {
 	line-height: 38px;
 }
 .meta-tab .tab-content>.tab-pane{
-	height: 300px;
 	position: relative;
 }
 .meta-tab .meta-tab-more{
 	position: absolute;
-	bottom: 15px;
-	right: 15px;
-	background: #1a84ae;
-	color: #fff;
+	top: -37px;
+	right: 0px;
+	color: #1a84ae;
 	width: 80px;
 	line-height: 35px;
 	text-align: center;
+}
+.meta-primary {
+    width:20.7%;
+    padding-left: 0;
+}
+.meta-primary-box {
+    border: 1px solid #E1E1E1;
+    /*height:310px;*/
+}
+.meta-primary-head {
+    background-image:url(../imgs/column_bg.png);
+    height:40px;
+    line-height:40px;
+    color: #222;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left:10px;
+}
+.meta-primary-column{
+    padding:10px;
+}
+.meta-primary-column a{
+    display:block;
+    margin-bottom:10px;
+}
+.meta-primary-column a img{
+    display:block;
+    width:100%;
+}
+.meta-primary-column a.primary-last{
+    margin-bottom:0;
 }
 /*身体中间广告*/
 .meta-advert{
@@ -702,6 +780,7 @@ body {
 }
 /*侧边悬浮广告*/
 .meta-contact{
+    display:none;
 	position: fixed;
 	bottom:100px;
 	right: 30px;
@@ -755,7 +834,7 @@ body {
 /*子页面公共样式开始*/
 
 /*子页面头部样式重置*/
-.meta-header-other{
+/*.meta-header-other{
 	position: relative;
 	background: #fff;
     border:none;
@@ -769,7 +848,7 @@ body {
 }
 .meta-header-other .meta-menu .nav > li > a{
 	color: #1d2f57;
-}
+}*/
 .meta-docs-banner{
 	height: 250px;
 	background:url(../imgs/head_docs_bg.jpg) no-repeat;
@@ -1683,7 +1762,7 @@ body {
 	.meta-banner-fluid .meta-video-player{
 		width: 70px;
 		height: 70px;
-		margin-top: -50px;
+		margin-top: -35px;
 		margin-left: -35px;
 	}
 	.meta-banner-video.modal-dialog{
