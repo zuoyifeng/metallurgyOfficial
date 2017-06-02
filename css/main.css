@@ -598,7 +598,7 @@ body {
 }
 /*身体中间广告*/
 .meta-advert{
-	margin: 30px auto;
+	margin: 30px auto 20px;
 }
 .meta-advert a{
 	display: block;
@@ -672,6 +672,9 @@ body {
     position:relative;
     cursor:pointer;
     font-size:15px;
+}
+.meta-links .meta-links-button:active{
+    background-color:#1585D7;
 }
 .meta-links .meta-links-button:after{
     position:absolute;
@@ -815,14 +818,11 @@ body {
 .meta-contact .meta-contact-close {
     background:#fff;
     position:absolute;
-    top:-13px;
-    right:-13px;
+    top:0;right:0;
     width:30px;
     line-height:28px;
     height:30px;
     text-align:center;
-    border-top:1px solid #ddd;
-    border-right:1px solid #ddd;
     -moz-appearance:none;
     -webkit-appearance:none;
     cursor: pointer;
@@ -832,6 +832,11 @@ body {
 	-webkit-border-radius:50%;
 	-moz-border-radius:50%;
 	border-radius:50%;
+}
+:root .meta-contact .meta-contact-close {
+    top:-13px;right:-13px;    
+    border-top:1px solid #ddd;
+    border-right:1px solid #ddd; 
 }
 .meta-contact .meta-contact-close span{
     opacity:.5;
