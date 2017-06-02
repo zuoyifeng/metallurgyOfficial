@@ -11,14 +11,21 @@ body {
 /*头部*/
 .meta-header{
     background-color:#fff;
+    height:100px;
+    position:relative;
 }
 .meta-header nav.navbar{
 	margin-bottom: 0px;
     min-height:40px;
+    position: absolute;
+    left:50%;
+    margin-left:-615px;
+    bottom:0;
 }
 .meta-header .navbar-brand{
 	padding-bottom: 0;
 	height: auto;
+    padding-top:24px;
 }
 .navbar-header {
     float: left;
@@ -33,9 +40,8 @@ body {
 }
 .meta-menu .nav > li > a{    
 	color: #1d2f57;
-	font-size: 18px;
-    padding-top: 13px;
-    padding-bottom: 13px;
+	font-size: 16px;
+    padding:10px 20px;
 }
 .meta-menu .nav .open>a, 
 .meta-menu .nav .open>a:focus, 
@@ -184,11 +190,11 @@ body {
 .meta-header-tool{
 	max-width: 620px;
 	overflow: hidden;
-	padding-top: 18px;
+	padding-top: 20px;
 }
 .meta-header-tool .meta-tool-email a{
 	font-size: 14px;
-	line-height: 50px;
+	line-height: 40px;
     color: #1d2f57;
 	display: inline-block;
 	padding: 0px 10px;
@@ -197,7 +203,7 @@ body {
 .meta-header-tool .meta-tool-email a:first-child:after{
 	content: "";
 	position: absolute;
-	top: 16px;
+	top: 11px;
 	right: 0px;
 	width: 1px;
 	background-color: #1d2f57;
@@ -205,8 +211,8 @@ body {
 }
 .meta-header-tool .meta-tool-tel{
     color: #1d2f57;
-	font-size: 16px;
-	line-height: 50px;
+	font-size: 14px;
+	line-height: 40px;
 }
 .meta-header-tool .meta-tool-tel .glyphicon{
 	vertical-align:-2px;
@@ -219,7 +225,7 @@ body {
 }
 .meta-header-tool .meta-tool-form input{
 	width: 200px;
-	margin-top: 10px;
+	margin-top: 5px;
 	height: 30px;
 	box-shadow: none;
 	border-radius: 0;
@@ -228,7 +234,7 @@ body {
 .meta-header-tool .meta-tool-form .glyphicon{
 	position: absolute;
 	right: 0;
-	top: 10px;
+	top: 5px;
 	width: 30px;
 	height: 30px;
 	line-height: 30px;
