@@ -10,7 +10,25 @@ $(function(){
 	});
     //控制点击盒子关闭菜单		
 	$(document).off('click.bs.dropdown.data-api');
-	
+
+    //底部友情链接
+	$('#linkButton').on('click', function () {
+	    var $this = $(this),
+            $doms = $(this).parent('.meta-links');
+	    if ($doms.hasClass('open')) {
+	        $doms.removeClass('open');
+	    } else {
+	        $doms.addClass('open');
+	    }
+	})
+	$('.meta-links').mouseleave(function () {	   
+	    $(this).removeClass('open');
+    });
+
+    //关闭侧边联系业务咨询
+	$('#closeContact').on('click', function () {
+	    $(this).parent('.meta-contact').remove();
+	})
 
 	/*	菜单中的选项卡	*/
 	$('#metaMenutab>ul>li').hover(function(){
