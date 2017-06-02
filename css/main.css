@@ -39,7 +39,7 @@ body {
     float: left;
 }
 .meta-menu .nav > li > a{    
-	color: #1d2f57;
+	color: #25355c;
 	font-size: 16px;
     padding:10px 20px;
 }
@@ -190,12 +190,13 @@ body {
 .meta-header-tool{
 	max-width: 620px;
 	overflow: hidden;
-	padding-top: 20px;
+	padding-top: 15px;
+    padding-right: 11px;
 }
 .meta-header-tool .meta-tool-email a{
 	font-size: 14px;
 	line-height: 40px;
-    color: #1d2f57;
+    color: #25355c;
 	display: inline-block;
 	padding: 0px 10px;
 	position: relative;
@@ -206,17 +207,17 @@ body {
 	top: 11px;
 	right: 0px;
 	width: 1px;
-	background-color: #1d2f57;
+	background-color: #25355c;
 	height: 18px;
 }
 .meta-header-tool .meta-tool-tel{
-    color: #1d2f57;
+    color: #25355c;
 	font-size: 14px;
 	line-height: 40px;
 }
 .meta-header-tool .meta-tool-tel .glyphicon{
 	vertical-align:-2px;
-	font-size: 18px;
+	font-size: 16px;
 	margin-right: 3px;
 }
 .meta-header-tool .meta-tool-form{
@@ -649,6 +650,9 @@ body {
 	line-height:35px;
 	text-align: center;
 }
+:root .meta-panel-cont ul li span {
+    background-color: rgba(51,51,51,0.3);
+}
 /*底部*/
 .meta-footer{
 	margin-top:30px;
@@ -839,6 +843,7 @@ body {
 	-moz-border-radius:50%;
 	border-radius:50%;
 }
+/*除ie8其他浏览器关闭按钮显示圆角并且突出*/
 :root .meta-contact .meta-contact-close {
     top:-13px;right:-13px;    
     border-top:1px solid #ddd;
@@ -855,21 +860,6 @@ body {
 /*子页面公共样式开始*/
 
 /*子页面头部样式重置*/
-/*.meta-header-other{
-	position: relative;
-	background: #fff;
-    border:none;
-}
-.meta-header-other .meta-header-tool .meta-tool-email a,
-.meta-header-other .meta-header-tool .meta-tool-tel{
-	color: #1d2f57;
-}
-.meta-header-other .meta-header-tool .meta-tool-email a:first-child:after{
-	background-color:#1d2f57;
-}
-.meta-header-other .meta-menu .nav > li > a{
-	color: #1d2f57;
-}*/
 .meta-docs-banner{
 	height: 250px;
 	background:url(../imgs/head_docs_bg.jpg) no-repeat;
@@ -1117,6 +1107,7 @@ body {
     margin-right:4.7%;
     margin-bottom:30px;
 }
+/*待优化*/
 /* IE8 nth */ 
 .meta-achieve dl:first-child+dl+dl,
 .meta-achieve dl:first-child+dl+dl+dl+dl+dl,
