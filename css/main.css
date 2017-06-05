@@ -1780,10 +1780,6 @@ body {
 	.meta-banner-video.modal-dialog{
 		width:652px;
 	}
-	.meta-banner-video iframe {
-		width:620px;
-		height: 400px;
-	}
     .meta-contact-banner{
 	    height: 300px;
 	    background-size:auto;
