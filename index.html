@@ -429,11 +429,15 @@
 	<script src="js/common.js"></script>
 	<script src="js/config.js"></script>
 	<script type="text/javascript">
-		$(function(){			
+        $(function () {
+  
 		    var $video = document.getElementById("videoPlay");
 			//视频播放			
 			$('#playVideo').click(function(){	
-			    $('#myModal').modal('show');
+			    $('#myModal').modal({
+			        keyboard: false,
+			        show: true
+			    });
 			    $video.play();
 			});
 			$('#myModal button').click(function () {
@@ -451,6 +455,7 @@
 					$('#playVideo').addClass('hide');
 				}				
 			})
+
 		});
 
 	</script>
