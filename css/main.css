@@ -1026,13 +1026,14 @@ body {
     width:140px;
     max-width:17%;
     height:140px;
-    background-image:url(../../imgs/headpic_default.png);
-    background-size:100% 100%;
-    background-position:center;
-    background-repeat:no-repeat;
+    overflow:hidden;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius: 5px;
+}
+.meta-leader dl dt img{
+    width:100%;
+    display:block;
 }
 .meta-leader dl dd{
     float:right;
