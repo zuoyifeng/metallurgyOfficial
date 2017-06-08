@@ -376,22 +376,16 @@ body {
 /*小播放器*/
 .meta-banner{
 	padding-right: 0;
-	/*height: 350px;*/
-	overflow: hidden;
     width:34.5%;
-}
-.meta-banner .carousel{
-	/*border:1px solid #E1E1E1;*/
-    /*padding:2px;*/
 }
 .meta-banner .carousel-inner .item a{
 	/*height: 304px;*/
 	height: 310px;
-	background-color: #EFEFEF;
-	background-position: center;
-	background-size:100% auto;
-	background-repeat: no-repeat;
+	overflow: hidden;
 	display: block;
+}
+.meta-banner .carousel-inner .item a img{
+    width:100%;
 }
 .meta-banner .carousel-inner .carousel-caption{
 	right: 0;left: 0;
@@ -881,7 +875,7 @@ body {
 .meta-wrap{
 	position: relative;
 	z-index: 50;
-	margin-top: -195px;
+	margin-top: -215px;
 }
 .meta-main-head{
     position:relative;
@@ -911,7 +905,7 @@ body {
     background:#fff;    
     position: relative;
     z-index: 100;
-    margin-top: -50px;
+    margin-top: -70px;
 }
 .meta-main>.row{
     margin:0px auto;
