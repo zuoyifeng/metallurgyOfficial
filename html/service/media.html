@@ -294,22 +294,22 @@
                 }
             }
             $('#timeline-data').append($ul);
+            //显示第一条
+            $('#Nodedata').html($('#show' + years[0]).html());
 
             //判断年份数目做ul宽度调整
-            if (yearlen > 5) {
+            if (yearlen == 1) {
+                $('.meta-filter-year').remove();
+            } else if (yearlen > 5) {
                 $('#fliterYear').width(listWidth * yearlen);
                 $('.meta-filter-prev').hide();//箭头
                 if (n == 0) {
-                    //显示第一条
-                    $('#Nodedata').html($('#show' + years[n]).html());
                     yearHtml += '<li style="width:' + listWidth + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
                 } else {
                     yearHtml += '<li style="width:' + listWidth + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
                 }
-            } else {
+            } else if (yearlen <= 5) {
                 if (n == 0) {
-                    //显示第一条
-                    $('#Nodedata').html($('#show' + years[n]).html());
                     yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
                 } else {
                     yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';

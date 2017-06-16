@@ -155,9 +155,8 @@
                     </ul>
                 </div>
                 <div class="col-xs-10 meta-maincont meta-meeting pull-right">
-                    <h3>《钢铁规划研究院》<a class="meta-meet-topbtn">我要订阅</a></h3>
+                    <h3>《钢铁规划研究院》<a class="meta-meet-topbtn">我要购买</a></h3>
                     <div class="meta-list-box">
-                        <p class="meta-list-describe">冶金工业规划研究院是中国专门从事冶金工业发展规划及战略研究的国家级咨询单位，是全国首批甲级工程咨询单位，致力于为客户提供具有战略参考价值的产业市场决策支持系统。由冶金工业规划研究院主办的《钢铁规划研究》（刊）是国内钢铁行业唯一一份规划与咨询研究技术期刊。此刊对政府部门、企事业单位领导及其所属的计划、规划、设计、技术经济、金融、管理、图书资料等部门，具有重要参考价值。</p>
                         <div class="meta-filter-year">
                             <div class="meta-filter">
                                 <span flag="prev" class="meta-filter-prev"></span>
@@ -203,22 +202,22 @@
                                 </li>
                                 <li class="clearfix" _year="2015" _date="2017-03-10">
                                     <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《钢铁规划研究》2016年第4期目录</a>
+                                    <a href="issue_detail.html">《钢铁规划研究》2015年第4期目录</a>
                                     <span class="meta-list-time">2017-03-01</span>
                                 </li>
                                 <li class="clearfix" _year="2015" _date="2017-03-10">
                                     <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《钢铁规划研究》2016年第3期目录</a>
+                                    <a href="issue_detail.html">《钢铁规划研究》2015年第3期目录</a>
                                     <span class="meta-list-time">2017-02-17</span>
                                 </li>
                                 <li class="clearfix" _year="2014" _date="2017-03-10">
                                     <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《钢铁规划研究》2016年第2期目录</a>
+                                    <a href="issue_detail.html">《钢铁规划研究》2014年第2期目录</a>
                                     <span class="meta-list-time">2017-05-15</span>
                                 </li>
                                 <li class="clearfix" _year="2014" _date="2017-03-10">
                                     <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《钢铁规划研究》2016年第1期目录</a>
+                                    <a href="issue_detail.html">《钢铁规划研究》2014年第1期目录</a>
                                     <span class="meta-list-time">2017-05-15</span>
                                 </li>
                             </ul>
@@ -283,22 +282,22 @@
                 }
             }
             $('#timeline-data').append($ul);
+            //显示第一条
+            $('#Nodedata').html($('#show' + years[0]).html());
 
-            //判断年份数目做ul宽度调整
-            if (yearlen > 5) {
+            //判断年份数目做ul宽度调整            
+            if (yearlen == 1) {
+                $('.meta-filter-year').remove();
+            } else if (yearlen > 5) {
                 $('#fliterYear').width(listWidth * yearlen);
                 $('.meta-filter-prev').hide();//箭头
                 if (n == 0) {
-                    //显示第一条
-                    $('#Nodedata').html($('#show' + years[n]).html());
                     yearHtml += '<li style="width:' + listWidth + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
                 } else {
                     yearHtml += '<li style="width:' + listWidth + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
                 }
-            } else {
+            } else if (yearlen <= 5) {
                 if (n == 0) {
-                    //显示第一条
-                    $('#Nodedata').html($('#show' + years[n]).html());
                     yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
                 } else {
                     yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';

@@ -247,6 +247,10 @@
                                 <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
                                 <dd><a href="bluebook_detail.html">2014年度报告</a></dd>
                             </dl>
+                            <dl _year="2013" _category="3">
+                                <dt><a href="bluebook_detail.html"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="bluebook_detail.html">2013年度报告</a></dd>
+                            </dl>
                         </div>
                     </div>
                 </div>
@@ -317,20 +321,21 @@
                 $ul.appendChild($div);
             }
             $('#timeline-data').append($ul);
-            //默认显示第一组   
-            if (n == 0) {                 
-                if ($('#show' + years[n]).find('.cate1').find('dl').length != 0) {
-                    $('#specialData').show().find('.meta-bluebook').html($('#show' + years[n]).find('.cate1').html());
-                }
-                if ($('#show' + years[n]).find('.cate2').find('dl').length != 0) {
-                    $('#seasonData').show().find('.meta-bluebook').html($('#show' + years[n]).find('.cate2').html());
-                }
-                if ($('#show' + years[n]).find('.cate3').find('dl').length != 0) {
-                    $('#annualData').show().find('.meta-bluebook').html($('#show' + years[n]).find('.cate3').html());
-                }
+            //默认显示第一组                 
+            if ($('#show' + years[0]).find('.cate1').find('dl').length != 0) {
+                $('#specialData').show().find('.meta-bluebook').html($('#show' + years[0]).find('.cate1').html());
             }
+            if ($('#show' + years[0]).find('.cate2').find('dl').length != 0) {
+                $('#seasonData').show().find('.meta-bluebook').html($('#show' + years[0]).find('.cate2').html());
+            }
+            if ($('#show' + years[0]).find('.cate3').find('dl').length != 0) {
+                $('#annualData').show().find('.meta-bluebook').html($('#show' + years[0]).find('.cate3').html());
+            }
+
             //判断年份数目做ul宽度调整
-            if (yearlen > 5) {
+            if (yearlen == 1) {
+                $('.meta-filter-year').remove();
+            } else if (yearlen > 5) {
                 $('#fliterYear').width(listWidth * yearlen);
                 $('.meta-filter-prev').hide();//箭头
                 if (n == 0) {
@@ -338,7 +343,7 @@
                 } else {
                     yearHtml += '<li style="width:' + listWidth + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
                 }
-            } else {
+            } else if (yearlen <= 5) {
                 if (n == 0) {
                     yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
                 } else {

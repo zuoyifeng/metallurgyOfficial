@@ -170,33 +170,69 @@
                     </ul>
                 </div>
                 <div class="col-xs-10 meta-maincont meta-meeting pull-right">
-                    <h3>《中国钢铁图书系列》<a class="meta-meet-topbtn">我要订阅</a></h3>
+                    <h3>《中国钢铁图书系列》<a class="meta-meet-topbtn">我要购买</a></h3>
                     <div class="meta-list-box">
+                        <div class="meta-filter-year">
+                            <div class="meta-filter">
+                                <span flag="prev" class="meta-filter-prev"></span>
+                                <div class="meta-filter-item">
+                                    <ul class="list-unstyled" id="fliterYear"></ul>
+                                </div>
+                                <span flag="next" class="meta-filter-next"></span>
+                            </div>
+                        </div>
                         <div class="meta-list">
-                            <ul class="list-unstyled">
-                                <li class="clearfix">
+                            <ul class="list-unstyled" id="Nodedata"></ul>
+                            <!-- 模拟数据 -->
+                            <ul id="timeline-data" style="display:none;">
+                                <li class="clearfix" _year="2017" _date="2017-03-10">
                                     <span class="meta-list-arrow">·</span>
-                                    <a href="book_detail.html">《中国钢铁工业年鉴2016》</a>
-                                    <span class="meta-list-time">2017-03-01</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="book_detail.html">《2015中国钢铁统计》</a>
-                                    <span class="meta-list-time">2017-02-17</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="book_detail.html">《第九届中国钢铁年会论文集》</a>
-                                    <span class="meta-list-time">2017-05-15</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="book_detail.html">《铸钢件特种铸造技术》</a>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2017年第2期目录</a>
                                     <span class="meta-list-time">2017-03-10</span>
                                 </li>
-                                <li class="clearfix">
+                                <li class="clearfix" _year="2017" _date="2017-03-10">
                                     <span class="meta-list-arrow">·</span>
-                                    <a href="book_detail.html">《大国钢铁》</a>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2017年第1期目录</a>
+                                    <span class="meta-list-time">2017-03-10</span>
+                                </li>
+                                <li class="clearfix" _year="2016" _date="2017-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2016年第4期目录</a>
+                                    <span class="meta-list-time">2017-03-01</span>
+                                </li>
+                                <li class="clearfix" _year="2016" _date="2017-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2016年第3期目录</a>
+                                    <span class="meta-list-time">2017-02-17</span>
+                                </li>
+                                <li class="clearfix" _year="2016" _date="2017-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2016年第2期目录</a>
+                                    <span class="meta-list-time">2017-05-15</span>
+                                </li>
+                                <li class="clearfix" _year="2016" _date="2017-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2016年第1期目录</a>
+                                    <span class="meta-list-time">2017-05-15</span>
+                                </li>
+                                <li class="clearfix" _year="2015" _date="2017-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2015年第4期目录</a>
+                                    <span class="meta-list-time">2017-03-01</span>
+                                </li>
+                                <li class="clearfix" _year="2015" _date="2017-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2015年第3期目录</a>
+                                    <span class="meta-list-time">2017-02-17</span>
+                                </li>
+                                <li class="clearfix" _year="2014" _date="2017-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2014年第2期目录</a>
+                                    <span class="meta-list-time">2017-05-15</span>
+                                </li>
+                                <li class="clearfix" _year="2014" _date="2017-03-10">
+                                    <span class="meta-list-arrow">·</span>
+                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2014年第1期目录</a>
                                     <span class="meta-list-time">2017-05-15</span>
                                 </li>
                             </ul>
@@ -233,5 +269,114 @@
 	<script src="../../codebase/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../../js/common.js"></script>
 	<script src="../../js/config.js"></script>
+    <script src="../../js/lodash.min.js"></script>
+    <script type="text/javascript">
+        var years = [],
+            $node = $('#timeline-data>li'),
+            len = $node.length;
+
+        for (var i = 0; i < len; i++) {
+            years.push($node[i].attributes['_year'].value);
+        }
+        //去重
+        years = _.uniq(years, true);
+        //生成时间轴宽度
+        var yearlen = years.length,
+            yearWidth = $('#fliterYear').width(),
+            listWidth = yearWidth / 5;
+
+        //加载时间轴年份和对应数据列表
+        var yearHtml = '';
+        for (var n = 0; n < yearlen; n++) {
+            var $ul = document.createElement("ul");
+                $ul.setAttribute("id", 'show' + years[n]);
+                $ul.style.display = "none";
+            for (var k = 0; k < len; k++) {
+                if ($node[k].attributes['_year'].value == years[n]) {
+                    $ul.appendChild($node[k]);
+                }
+            }
+            $('#timeline-data').append($ul);
+            //显示第一条
+            $('#Nodedata').html($('#show' + years[0]).html());
+
+            //判断年份数目做ul宽度调整
+            if (yearlen == 1) {
+                $('.meta-filter-year').remove();
+            } else if (yearlen > 5) {
+                $('#fliterYear').width(listWidth * yearlen);
+                $('.meta-filter-prev').hide();//箭头
+                if (n == 0) {
+                    yearHtml += '<li style="width:' + listWidth + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                } else {
+                    yearHtml += '<li style="width:' + listWidth + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                }
+            } else if (yearlen <= 5) {
+                if (n == 0) {
+                    yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" class="active" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                } else {
+                    yearHtml += '<li style="width:' + yearWidth / yearlen + 'px" showid="show' + years[n] + '"><a>' + years[n] + '</a></li>';
+                }
+                $('.meta-filter-prev,.meta-filter-next').hide();//箭头
+            };
+
+        }
+        $('#fliterYear').html(yearHtml);
+
+        //切换时间轴数据箭头
+        var initpage = 1, isScroll = false,
+            totalpage = Math.ceil(yearlen / 5),
+            repage = yearlen % 5;
+        $('.meta-filter>span').on('click', function () {
+            var $this = $(this),
+                $flag = $this.attr('flag');
+            var initleft = $('#fliterYear').position().left;
+
+            if (isScroll) {
+                return false;
+            }
+            isScroll = true;
+            if ($flag == 'next') {
+                initpage++;
+                if (initpage == totalpage) {
+                    //余数为0
+                    repage = repage != 0 ? repage : repage = 5;
+                    $('#fliterYear').animate({ left: initleft - (repage * listWidth) + 'px' }, function () {
+                        $('.meta-filter-prev').show();
+                        $('.meta-filter-next').hide();
+                        isScroll = false;
+                    });
+                } else {
+                    $('#fliterYear').animate({ left: initleft - yearWidth + 'px' }, function () {
+                        $('.meta-filter-prev,.meta-filter-next').show();
+                        isScroll = false;
+                    });
+                }
+            } else {
+                initpage--;
+                if (initpage == 1) {
+                    $('#fliterYear').animate({ left:  '0px' }, function () {
+                        $('.meta-filter-prev').hide();
+                        $('.meta-filter-next').show();
+                        isScroll = false;
+                    });
+                } else {
+                    $('#fliterYear').animate({ left: initleft + yearWidth + 'px' }, function () {
+                        $('.meta-filter-prev,.meta-filter-next').show();
+                        isScroll = false;
+                    });
+                }
+            }
+        })
+
+        //切换列表
+        $('#fliterYear>li').on('click', function () {
+            var $this  = $(this),
+                $date  = $this.find('a').text(),
+                showid = $this.attr('showid');
+            $this.addClass('active').siblings('li').removeClass('active');
+            $('#Nodedata').html($('#'+showid).html());
+        })
+    </script>
 </body>
 </html>
