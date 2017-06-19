@@ -181,61 +181,37 @@
                                 <span flag="next" class="meta-filter-next"></span>
                             </div>
                         </div>
-                        <div class="meta-list">
-                            <ul class="list-unstyled" id="Nodedata"></ul>
-                            <!-- 模拟数据 -->
-                            <ul id="timeline-data" style="display:none;">
-                                <li class="clearfix" _year="2017" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2017年第2期目录</a>
-                                    <span class="meta-list-time">2017-03-10</span>
-                                </li>
-                                <li class="clearfix" _year="2017" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2017年第1期目录</a>
-                                    <span class="meta-list-time">2017-03-10</span>
-                                </li>
-                                <li class="clearfix" _year="2016" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2016年第4期目录</a>
-                                    <span class="meta-list-time">2017-03-01</span>
-                                </li>
-                                <li class="clearfix" _year="2016" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2016年第3期目录</a>
-                                    <span class="meta-list-time">2017-02-17</span>
-                                </li>
-                                <li class="clearfix" _year="2016" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2016年第2期目录</a>
-                                    <span class="meta-list-time">2017-05-15</span>
-                                </li>
-                                <li class="clearfix" _year="2016" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2016年第1期目录</a>
-                                    <span class="meta-list-time">2017-05-15</span>
-                                </li>
-                                <li class="clearfix" _year="2015" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2015年第4期目录</a>
-                                    <span class="meta-list-time">2017-03-01</span>
-                                </li>
-                                <li class="clearfix" _year="2015" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2015年第3期目录</a>
-                                    <span class="meta-list-time">2017-02-17</span>
-                                </li>
-                                <li class="clearfix" _year="2014" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2014年第2期目录</a>
-                                    <span class="meta-list-time">2017-05-15</span>
-                                </li>
-                                <li class="clearfix" _year="2014" _date="2017-03-10">
-                                    <span class="meta-list-arrow">·</span>
-                                    <a href="issue_detail.html">《中国钢铁工业年鉴》2014年第1期目录</a>
-                                    <span class="meta-list-time">2017-05-15</span>
-                                </li>
-                            </ul>
+                        <div class="meta-bluebook clearfix" id="specialData"></div>
+                        <!-- 模拟数据 -->
+                        <div id="timeline-data" style="display:none;">
+                            <dl _year="2017">
+                                <dt><a href="###"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="###">《中国钢铁工业年鉴》2017年第1期目录</a></dd>
+                            </dl>
+                            <dl _year="2017">
+                                <dt><a href="###"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="###">《中国钢铁工业年鉴》2017年第2期目录</a></dd>
+                            </dl>
+                            <dl _year="2016">
+                                <dt><a href="###"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="###">《中国钢铁工业年鉴》2016年第1期目录</a></dd>
+                            </dl>
+                            <dl _year="2016">
+                                <dt><a href="###"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="###">《中国钢铁工业年鉴》2016年第2期目录</a></dd>
+                            </dl>
+                            <dl _year="2016">
+                                <dt><a href="###"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="###">《中国钢铁工业年鉴》2016年第3期目录</a></dd>
+                            </dl>
+                            <dl _year="2015">
+                                <dt><a href="###"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="###">《中国钢铁工业年鉴》2015年第1期目录</a></dd>
+                            </dl>
+                            <dl _year="2015">
+                                <dt><a href="###"><img src="../../imgs/book02.jpg" /></a></dt>
+                                <dd><a href="###">《中国钢铁工业年鉴》2015年第2期目录</a></dd>
+                            </dl>
                         </div>
                     </div>
                 </div>
@@ -272,7 +248,7 @@
     <script src="../../js/lodash.min.js"></script>
     <script type="text/javascript">
         var years = [],
-            $node = $('#timeline-data>li'),
+            $node = $('#timeline-data>dl'),
             len = $node.length;
 
         for (var i = 0; i < len; i++) {
@@ -298,7 +274,7 @@
             }
             $('#timeline-data').append($ul);
             //显示第一条
-            $('#Nodedata').html($('#show' + years[0]).html());
+            $('#specialData').html($('#show' + years[0]).html());
 
             //判断年份数目做ul宽度调整
             if (yearlen == 1) {
@@ -375,7 +351,7 @@
                 $date  = $this.find('a').text(),
                 showid = $this.attr('showid');
             $this.addClass('active').siblings('li').removeClass('active');
-            $('#Nodedata').html($('#'+showid).html());
+            $('#specialData').html($('#' + showid).html());
         })
     </script>
 </body>
