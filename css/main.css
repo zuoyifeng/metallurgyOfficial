@@ -864,7 +864,7 @@ body {
 	z-index: 20;
 }
 .meta-contact-banner{
-	height: 450px;
+	height: 380px;
 	background:url(../imgs/head_contact_bg.jpg) no-repeat;
 	background-position:center;
 	background-size: auto 100%;
@@ -934,7 +934,7 @@ body {
 .meta-detail p{
     line-height:1.8;
     font-size:15px;
-    text-align: justify;
+    /*text-align: justify;*/
 }
 .meta-detail img {
     max-width:100%;
@@ -1669,17 +1669,20 @@ body {
     margin-top:20px;
 }
 .meta-contactus .meta-artonce{
-    margin-top:20px;
+    margin-top:10px;
     padding:0;
 }
 .meta-contactus .meta-artonce h3 {
     text-align:center;
-    font-size:32px;
-    padding:20px 0;
+    font-size:28px;
+    padding:0 0 10px;
+}
+.meta-contactus .meta-artonce .meta-content{
+    padding-top:10px;
 }
 .meta-contactus .meta-content-help {
-    font-size:24px;
-    margin-bottom:30px;
+    font-size:22px;
+    margin-bottom:10px;
 }
 .meta-contactus .meta-contact-map {
     height:500px;
@@ -1776,7 +1779,7 @@ body {
 		width:652px;
 	}
     .meta-contact-banner{
-	    height: 300px;
+	    height: 260px;
 	    background-size:auto;
     }
 }
