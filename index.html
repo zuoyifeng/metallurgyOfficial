@@ -324,43 +324,50 @@
 			<div class="meta-panel-title">
 				<img src="imgs/panel_title.png" />
 			</div>
-			<div class="meta-panel-cont">
-                <ul class="list-unstyled clearfix">
-                    <li>
-                        <a href="html/special/interpret.html">
-                            <img src="imgs/special01.jpg" />
-                            <span>绿色工厂</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="html/intelligent/interpret.html">
-                            <img src="imgs/special02.jpg" />
-                            <span>智能工厂</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="html/merger/interpret.html">
-                            <img src="imgs/special03.jpg" />
-                            <span>兼并重组</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="html/capacity/interpret.html">
-                            <img src="imgs/special04.jpg" />
-                            <span>产能置换</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
-                            <img src="imgs/special05.jpg" />
-                            <span>企业标准自我申明专栏</span>
-                        </a>
-                    </li>
-                </ul>
+			<div class="meta-panel-cont" id="rotaImgs" >
+                <div class="rotalist">
+                    <ul class="list-unstyled clearfix">
+                        <li>
+                            <a href="###">
+                                <img src="imgs/special06.jpg" />
+                                <span>“一带一路”专题报道</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="html/special/interpret.html">
+                                <img src="imgs/special01.jpg" />
+                                <span>绿色工厂</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="html/intelligent/interpret.html">
+                                <img src="imgs/special02.jpg" />
+                                <span>智能工厂</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="html/merger/interpret.html">
+                                <img src="imgs/special03.jpg" />
+                                <span>兼并重组</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="html/capacity/interpret.html">
+                                <img src="imgs/special04.jpg" />
+                                <span>产能置换</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="###">
+                                <img src="imgs/special05.jpg" />
+                                <span>企业标准自我申明专栏</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 			</div>
 		</div>
 	</div>
-
 	<footer class="meta-footer">
         <div class="container">
             <div class="meta-copyright">
@@ -431,9 +438,16 @@
 	<script src="codebase/bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/config.js"></script>
+    <script src="js/superslide.min.js"></script>
 	<script type="text/javascript">
         $(function () {
-  
+            jQuery("#rotaImgs").slide({
+                mainCell: ".rotalist ul",
+                autoPlay: true,
+                effect: "leftMarquee",
+                vis: 5,
+                interTime: 50
+            });
 		    var $video = document.getElementById("videoPlay");
 			//视频播放			
 			$('#playVideo').click(function(){	
@@ -458,7 +472,6 @@
 					$('#playVideo').addClass('hide');
 				}				
 			})
-
 		});
 
 	</script>
