@@ -1,3 +1,3 @@
 # metallurgyOfficial
 冶金PC官网 
-官网入口 https://zuoyifeng.github.io/metallurgyOfficial/
+喜欢点个赞，有更多互相学习的地方
